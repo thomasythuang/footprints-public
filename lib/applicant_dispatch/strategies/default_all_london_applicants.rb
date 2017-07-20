@@ -1,7 +1,7 @@
 module ApplicantDispatch
   module Strategies
     class DefaultAllLondonApplicants
-      LONDON_DIRECTOR_EMAIL = "jim@8thlight.com"
+      LONDON_DIRECTOR_EMAIL = "jim@abcinc.com"
 
       def call(candidates, applicant)
         location = applicant.location

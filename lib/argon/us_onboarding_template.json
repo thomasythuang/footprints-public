@@ -32,13 +32,13 @@
       "family" : "frescosans-bold",
       "size" : 16
   }
-}, "8th" ], [ "text", {
+}, "ABC" ], [ "text", {
   "font" : {
     "color" : "black",
       "family" : "frescosans-bold",
       "size" : 16
   }
-}, " Light, Inc." ] ], [ "paragraph", { }, [ "text", {
+}, " Inc." ] ], [ "paragraph", { }, [ "text", {
   "font" : {
     "color" : "black",
       "family" : "fresco",
@@ -94,7 +94,7 @@
 	  "top" : 15,
       "bottom" : 15
     }
-      }, "8th Light believes that the most basic building block of a fruitful apprenticeship is mutual understanding. A mentor and apprentice relationship that is not built on a clear set of expectations will waste the time and energy of all parties involved. This contract sets forth what is expected of you as an apprentice and what is expected of your mentor. It is a reminder to both of you of the responsibilities inherent in entering into this relationship. It is a resource to be referred to when guidance is needed." ],
+      }, "ABC, Inc. believes that the most basic building block of a fruitful apprenticeship is mutual understanding. A mentor and apprentice relationship that is not built on a clear set of expectations will waste the time and energy of all parties involved. This contract sets forth what is expected of you as an apprentice and what is expected of your mentor. It is a reminder to both of you of the responsibilities inherent in entering into this relationship. It is a resource to be referred to when guidance is needed." ],
 
   [ "paragraph", {
     "font" : {
@@ -112,7 +112,7 @@
     "padding" : {
       "bottom" : 25
     }
-  }, "As an apprentice of 8th light you acknowledge and understand the following:" ],
+  }, "As an apprentice of ABC, Inc. you acknowledge and understand the following:" ],
 
   [ "paragraph", {
     "font" : {
@@ -122,7 +122,7 @@
   	  "left" : 25,
       "bottom" : 15
     }
-  }, "1. The 8th Light apprenticeship program is a difficult and challenging opportunity. Like all opportunities, it will require my hard work and preparation to achieve success. Anything less than my full dedication will lead to a failed apprenticeship. My mentor cannot force me to reach the next level of my craft. They can guide and assist me, but I am my own driving force. " ],
+  }, "1. The ABC, Inc. apprenticeship program is a difficult and challenging opportunity. Like all opportunities, it will require my hard work and preparation to achieve success. Anything less than my full dedication will lead to a failed apprenticeship. My mentor cannot force me to reach the next level of my craft. They can guide and assist me, but I am my own driving force. " ],
 
   [ "paragraph", {
     "font" : {
@@ -132,7 +132,7 @@
 	  "left" : 25,
       "bottom" : 15
     }
-  }, "2. A completed apprenticeship is not a guarantee of employment at 8th Light. I understand that this program is an educational opportunity similar to a graduate level program in other disciplines. The goal for 8th Light is to hire all residents who succeed throughout their residency. Not being offered employment is not a sign of a failed apprenticeship, there are many external factors. If I succeed in my apprenticeship, I will have a honed set of skills that carry over to any work environment in my craft. " ],
+  }, "2. A completed apprenticeship is not a guarantee of employment at ABC, Inc.. I understand that this program is an educational opportunity similar to a graduate level program in other disciplines. The goal for ABC, Inc. is to hire all residents who succeed throughout their residency. Not being offered employment is not a sign of a failed apprenticeship, there are many external factors. If I succeed in my apprenticeship, I will have a honed set of skills that carry over to any work environment in my craft. " ],
 
   [ "paragraph", {
     "font" : {
@@ -142,7 +142,7 @@
 	  "left" : 25,
       "bottom" : 15
     }
-  }, "3. 8th Light is a business and seeks to maintain a professional environment. I will conduct myself in a professional manner in my apprenticeship. This includes proper attire in the work environment, courteousness to 8th Light clients, and allowing 8th Light employees space and time to deal with clients. We do not practice our craft in a vacuum. The client must always be in the front of our minds, as it is through their patronage that we are allowed to practice our craft. " ],
+  }, "3. ABC, Inc. is a business and seeks to maintain a professional environment. I will conduct myself in a professional manner in my apprenticeship. This includes proper attire in the work environment, courteousness to ABC, Inc. clients, and allowing ABC, Inc. employees space and time to deal with clients. We do not practice our craft in a vacuum. The client must always be in the front of our minds, as it is through their patronage that we are allowed to practice our craft. " ],
 
   [ "paragraph", {
     "font" : {
@@ -184,7 +184,7 @@
       "padding" : {
         "bottom" : 25
       }
-    }, "As a mentor of an 8th Light apprentice you acknowledge and understand he following: " ],
+    }, "As a mentor of an ABC, Inc. apprentice you acknowledge and understand he following: " ],
 
   [ "paragraph", {
       "font" : {
@@ -214,7 +214,7 @@
   	    "left" : 25,
         "bottom" : 15
       }
-    }, "3. My interactions with apprentices, clients, and other craftsman will be examples of how professionals conduct themselves. I will be a reflection of the culture we have created at 8th Light." ],
+    }, "3. My interactions with apprentices, clients, and other craftsman will be examples of how professionals conduct themselves. I will be a reflection of the culture we have created at ABC, Inc.." ],
 
   [ "paragraph", {
       "font" : {
@@ -270,7 +270,7 @@
 	  [ [ "cell",
 	        { "border-width" : {"top": 0, "right": 0, "bottom": 0, "left": 0},
 	          "padding" : {"top": 2, "bottom": 2},
-	          "embed" : ["phrase", {"font" : {"size" : 9, "family" : "helvetica"}}, "This Confidentiality and Nondisclosure Agreement (this “Agreement”), dated as of <TODAY'S DATE>, is by and between 8th Light, Inc, an Illinois corporation (“8th Light”), and <APPLICANT NAME> (“Company”). \n\n\n1. Confidential Information. “Confidential Information” means all information, currently existing or subsequently created, that either 8th Light or the Company (“Disclosing Party”) and/or any of their affiliates owns or controls that is not generally known to the public, whether of a technical, business or other nature (including, without limitation, trade secrets, know-how, information relating to the technology, customers, strategic partners, business plans, promotional and marketing objectives, software, methodologies, processes, finances and other business affairs of Disclosing Party), that is disclosed by Disclosing Party to the other party (“Receiving Party”) or that is otherwise learned by the Receiving Party in the course of its discussions or business dealings with the Disclosing Party, and that has been identified as being proprietary and/or confidential or that by the nature of the circumstances surrounding the disclosure or receipt ought to be treated as proprietary and confidential. The parties agree that any Confidential Information disclosed prior to or after the date hereof shall be protected by the terms of this Agreement.\n\n\n2. Use and Ownership of Confidential Information.
+	          "embed" : ["phrase", {"font" : {"size" : 9, "family" : "helvetica"}}, "This Confidentiality and Nondisclosure Agreement (this “Agreement”), dated as of <TODAY'S DATE>, is by and between ABC, Inc., Inc, an Illinois corporation (“ABC, Inc.”), and <APPLICANT NAME> (“Company”). \n\n\n1. Confidential Information. “Confidential Information” means all information, currently existing or subsequently created, that either ABC, Inc. or the Company (“Disclosing Party”) and/or any of their affiliates owns or controls that is not generally known to the public, whether of a technical, business or other nature (including, without limitation, trade secrets, know-how, information relating to the technology, customers, strategic partners, business plans, promotional and marketing objectives, software, methodologies, processes, finances and other business affairs of Disclosing Party), that is disclosed by Disclosing Party to the other party (“Receiving Party”) or that is otherwise learned by the Receiving Party in the course of its discussions or business dealings with the Disclosing Party, and that has been identified as being proprietary and/or confidential or that by the nature of the circumstances surrounding the disclosure or receipt ought to be treated as proprietary and confidential. The parties agree that any Confidential Information disclosed prior to or after the date hereof shall be protected by the terms of this Agreement.\n\n\n2. Use and Ownership of Confidential Information.
 	Receiving Party will not disclose Confidential Information to anyone without Disclosing Party's prior, written consent. In addition, Receiving Party will not use, or permit others to use, Confidential Information for any purpose other than its evaluation of the Disclosing Party’s products and/or services and, if desired by the parties, negotiation and consummation of a business transaction between the parties pursuant to a definitive agreement. Receiving Party will take all reasonable measures to avoid disclosure or unauthorized use of Confidential Information, including, at a minimum, those measures it takes to protect its own confidential information of a similar nature. Receiving Party’s personnel, if applicable, will have access only to the Confidential Information they need for such purposes, and Receiving Party will ensure that its personnel comply with this Agreement.\n\n\n3. Exceptions. The provisions of Section 2 will not apply to any information that Receiving Party establishes by written documentation: (i) at the time of disclosure was or thereafter becomes publicly available without breach of this Agreement; (ii) is rightfully received from a third party that did not acquire or disclose such information by a wrongful or tortious act; (iii) was developed by Receiving Party without reference to any Confidential Information; or (iv) Receiving Party is legally obligated to disclose by court order (but only to the limited extent required by the court).\n\n\n4. Return of Confidential Information. In the event that the parties determine not to proceed with discussions with respect to the business opportunity or upon Disclosing Party’s written request, Receiving Party will promptly return all tangible material embodying Confidential Information and will destroy all other tangible material containing Confidential Information in its possession or under its control."]}
 	],
 	[ "cell",
@@ -279,7 +279,7 @@
 	[ "cell",
 	  { "border-width" : {"top": 0, "right": 0, "bottom": 0, "left": 0},
 	    "padding" : {"top": 2, "bottom": 2},
-	    "embed" : ["phrase", {"font" : {"size" : 9, "family" : "helvetica"}}, "4. Return of Confidential Information. In the event that the parties determine not to proceed with discussions with respect to the business opportunity or upon Disclosing Party’s written request, Receiving Party will promptly return all tangible material embodying Confidential Information and will destroy all other tangible material containing Confidential Information in its possession or under its control.\n\n\n5. Injunctive Relief. Receiving Party acknowledges that disclosure or use of Confidential Information in violation of this Agreement could cause irreparable harm to Disclosing Party for which monetary damages may be difficult to ascertain. Receiving Party therefore agrees that Disclosing Party will have the right, in addition to its other rights and remedies, to seek injunctive relief for any violation of this Agreement.\n\n\n6. Miscellaneous. This Agreement constitutes the entire agreement between the parties relating to the matters discussed herein and supersedes all prior oral and written understandings with respect to any information disclosed or received under this Agreement. Nothing in this Agreement shall be construed as an obligation for Disclosing Party to disclose proprietary information or evaluation materials to Receiving Party. Disclosing Party shall not be considered to have made or make any representation or warranty as to the accuracy or completeness of any information provided hereunder. Receiving Party will be responsible for conducting and completing its own independent investigation, evaluation and due diligence relative to engaging in a transaction with Disclosing Party. This Agreement may be amended or modified only with the mutual written consent of the parties. Unless otherwise earlier terminated, this Agreement will automatically expire 3 years from the later of the date first written above and the date the particular Confidential Information at issue is disclosed. This Agreement will be governed by the internal laws of the State of Illinois (without regard to its rules regarding conflicts of laws), and may be executed in counterpart copies. The parties shall endeavor to resolve all disputes hereunder by good faith negotiations, failing which the parties shall submit the dispute to mediation in Chicago, Illinois under the rules of the American Arbitration Association and, if necessary, arbitration in Chicago, Illinois under the same rules. If a provision of this Agreement is held invalid under any applicable law or by any court, such invalidity will not affect any other provision of this Agreement.\n\n\n8th Light, Inc.\n\nBy:__________________________________\n\nPrint Name:__________________________\n\nTitle:________________________________\n\n[Company]\n\nBy:_________________________________\n\nPrint Name: <APPLICANT NAME>\n\nTitle:________________________________"]}
+	    "embed" : ["phrase", {"font" : {"size" : 9, "family" : "helvetica"}}, "4. Return of Confidential Information. In the event that the parties determine not to proceed with discussions with respect to the business opportunity or upon Disclosing Party’s written request, Receiving Party will promptly return all tangible material embodying Confidential Information and will destroy all other tangible material containing Confidential Information in its possession or under its control.\n\n\n5. Injunctive Relief. Receiving Party acknowledges that disclosure or use of Confidential Information in violation of this Agreement could cause irreparable harm to Disclosing Party for which monetary damages may be difficult to ascertain. Receiving Party therefore agrees that Disclosing Party will have the right, in addition to its other rights and remedies, to seek injunctive relief for any violation of this Agreement.\n\n\n6. Miscellaneous. This Agreement constitutes the entire agreement between the parties relating to the matters discussed herein and supersedes all prior oral and written understandings with respect to any information disclosed or received under this Agreement. Nothing in this Agreement shall be construed as an obligation for Disclosing Party to disclose proprietary information or evaluation materials to Receiving Party. Disclosing Party shall not be considered to have made or make any representation or warranty as to the accuracy or completeness of any information provided hereunder. Receiving Party will be responsible for conducting and completing its own independent investigation, evaluation and due diligence relative to engaging in a transaction with Disclosing Party. This Agreement may be amended or modified only with the mutual written consent of the parties. Unless otherwise earlier terminated, this Agreement will automatically expire 3 years from the later of the date first written above and the date the particular Confidential Information at issue is disclosed. This Agreement will be governed by the internal laws of the State of Illinois (without regard to its rules regarding conflicts of laws), and may be executed in counterpart copies. The parties shall endeavor to resolve all disputes hereunder by good faith negotiations, failing which the parties shall submit the dispute to mediation in Chicago, Illinois under the rules of the American Arbitration Association and, if necessary, arbitration in Chicago, Illinois under the same rules. If a provision of this Agreement is held invalid under any applicable law or by any court, such invalidity will not affect any other provision of this Agreement.\n\n\nABC, Inc., Inc.\n\nBy:__________________________________\n\nPrint Name:__________________________\n\nTitle:________________________________\n\n[Company]\n\nBy:_________________________________\n\nPrint Name: <APPLICANT NAME>\n\nTitle:________________________________"]}
 			  ]]
   ],
 	  

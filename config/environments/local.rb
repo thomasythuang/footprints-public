@@ -37,6 +37,6 @@ Footprints::Application.configure do
   ENV['STEWARD'] = MAILER_CONFIG['apprenticeship_steward']
   ENV['ADMIN_EMAIL'] = "test@test.com"
   ENV['APPLICANTS_REVIEWER'] = "test@test.com"
-  ENV['warehouse-host'] = "https://warehouse-staging.8thlight.com"
+  ENV['warehouse-host'] = "https://warehouse-staging.abcinc.com"
   ENV['SALARY_YML_DOC'] = "./lib/argon/salaries.yml"
 end

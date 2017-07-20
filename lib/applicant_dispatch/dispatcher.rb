@@ -17,7 +17,7 @@ module ApplicantDispatch
       NotificationMailer.applicant_request(applicant.craftsman, applicant).deliver
 
       applicant
-    rescue StandardError => error
+    rescue Exception => error
       NotificationMailer.dispatcher_failed_to_assign_applicant(applicant, error).deliver
     end
 
@@ -33,7 +33,7 @@ module ApplicantDispatch
       applicant.update_attributes(:assigned_craftsman => craftsman.name)
 
       craftsman_assignment_repository.create(
-        :applicant_id => applicant.id, 
+        :applicant_id => applicant.id,
         :craftsman_id => craftsman.id)
     end
 

@@ -6,7 +6,8 @@ class SessionsController < ApplicationController
   def create
     begin
       auth_hash = request.env["omniauth.auth"]
-      user      = repo.user.find_or_create_by_auth_hash(auth_hash) rescue nil
+      user    = repo.user.find_or_create_by_auth_hash(auth_hash) rescue nil
+
       prefetch_craftsmen(auth_hash)
       build_sessions(user, auth_hash)
       flash[:notice] = "Signed in successfully."
@@ -15,8 +16,8 @@ class SessionsController < ApplicationController
     rescue Warehouse::AuthenticationError, Warehouse::AuthorizationError => e
       display_authorization_message_and_log_exception(e)
       redirect_to oauth_signin_path
-    rescue StandardError => e
-      display_message_and_log_exception("There was a problem when logging in. Please contact it@8thlight.com.", e)
+    rescue Exception => e
+      display_message_and_log_exception("There was a problem when logging in. Please contact it@abcinc.com.", e)
       redirect_to oauth_signin_path
     end
   end
@@ -51,8 +52,8 @@ class SessionsController < ApplicationController
 
   def display_authorization_message_and_log_exception(exception)
     message = "You are not authorized to view this page. " +
-              "Only 8th Light craftsmen are authorized to view this page. " +
-              "If you are one, please contact Mike Jansen"
+      "Only ABC, Inc. craftsmen are authorized to view this page. " +
+      "If you are one, please contact us."
 
     display_message_and_log_exception(message, exception)
   end

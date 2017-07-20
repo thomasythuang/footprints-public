@@ -13,8 +13,8 @@ describe DashboardInteractor do
   let(:unconfirmed_applicant_two)    { repo.applicant.create(name: "Applicant Two", applied_on: Date.today, email: "test3@test.com",
                                                              assigned_craftsman: "A. Craftsman", craftsman_id: craftsman.id, has_steward: false,
                                                              discipline: "developer", skill: "resident", location: "London") }
-  let(:craftsman)                    { repo.craftsman.create(name: "A. Craftsman", employment_id: '123', email: 'testcraftsman@8thlight.com') }
-  let(:craftsman_without_applicants) { repo.craftsman.create(name: "B. Craftsman", employment_id: '567', email: 'testcraftsman2@8thlight.com') }
+  let(:craftsman)                    { repo.craftsman.create(name: "A. Craftsman", employment_id: '123', email: 'testcraftsman@abcinc.com') }
+  let(:craftsman_without_applicants) { repo.craftsman.create(name: "B. Craftsman", employment_id: '567', email: 'testcraftsman2@abcinc.com') }
   let(:interactor)                   { DashboardInteractor.new(repo.craftsman) }
 
   before :each do

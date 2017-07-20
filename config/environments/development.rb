@@ -33,10 +33,10 @@ Footprints::Application.configure do
   config.prefetch_craftsmen = false
 
   MAILER_CONFIG = YAML.load_file(Rails.root.join("config", "mailer.yml"))
-  ENV['FOOTPRINTS_TEAM'] = "footprints@8thlight.com"
+  ENV['FOOTPRINTS_TEAM'] = "footprints@abcinc.com"
   ENV['STEWARD'] = MAILER_CONFIG['apprenticeship_steward']
-  ENV['ADMIN_EMAIL'] = "footprints@8thlight.com"
-  ENV['APPLICANTS_REVIEWER'] = "footprints@8thlight.com"
-  ENV['warehouse-host'] = "https://warehouse-staging.8thlight.com"
+  ENV['ADMIN_EMAIL'] = "footprints@abcinc.com"
+  ENV['APPLICANTS_REVIEWER'] = "footprints@abcinc.com"
+  ENV['warehouse-host'] = "https://warehouse-staging.abcinc.com"
   ENV['SALARY_YML_DOC'] = "./lib/argon/salaries.yml"
 end

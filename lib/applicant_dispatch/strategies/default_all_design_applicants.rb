@@ -1,7 +1,7 @@
 module ApplicantDispatch
   module Strategies
     class DefaultAllDesignApplicants
-      LEAD_DESIGNER_EMAIL = "stephanie@8thlight.com"
+      LEAD_DESIGNER_EMAIL = "stephanie@abcinc.com"
 
       def call(candidates, applicant)
         if applicant.discipline.downcase == "designer"

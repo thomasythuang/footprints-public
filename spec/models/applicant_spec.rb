@@ -16,7 +16,7 @@ describe Applicant do
   end
 
   let(:message)    { Message.new(:title => "Title", :body => "Body", :created_at => Date.today) }
-  let!(:craftsman) { Craftsman.create(:name => "A Craftsman", :email => "acraftsman@8thlight.com", :employment_id => "1234") }
+  let!(:craftsman) { Craftsman.create(:name => "A Craftsman", :email => "acraftsman@abcinc.com", :employment_id => "1234") }
 
   it "has available code schools" do
     Applicant.code_schools.should_not be_empty

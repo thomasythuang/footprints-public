@@ -9,7 +9,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
       uid: "107478018817920458918",
       info: {
         name: "Megan Smith",
-        email: "you@8thlight.com",
+        email: "you@abcinc.com",
         first_name: "Megan",
         last_name: "Smith"
       },

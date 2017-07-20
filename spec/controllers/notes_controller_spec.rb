@@ -12,8 +12,8 @@ describe NotesController do
 
   context ":create" do
     it "creates note if user has craftsman" do
-      repo.craftsman.create(:name => "A Craftsman", :email => "acraftsman@8thlight.com", :employment_id => "007")
-      user = repo.user.create(:email => "acraftsman@8thlight.com")
+      repo.craftsman.create(:name => "A Craftsman", :email => "acraftsman@abcinc.com", :employment_id => "007")
+      user = repo.user.create(:email => "acraftsman@abcinc.com")
       controller.stub :current_user => user
       post :create, {"note" => {"body" => "Test Note", "applicant_id" => applicant.id}}
       expect(applicant.notes.last.body).to eq "Test Note"
@@ -37,8 +37,8 @@ describe NotesController do
 
   context ":update" do
     it "updates a note" do
-      repo.craftsman.create(:name => "A Craftsman", :email => "acraftsman@8thlight.com", :employment_id => "007")
-      user = repo.user.create(:email => "acraftsman@8thlight.com")
+      repo.craftsman.create(:name => "A Craftsman", :email => "acraftsman@abcinc.com", :employment_id => "007")
+      user = repo.user.create(:email => "acraftsman@abcinc.com")
       controller.stub :current_user => user
       note = repo.notes.create(:body => "Test Note", :applicant_id => applicant.id, :craftsman_id => craftsman.id)
       patch :update, {"id" => note.id, "note" => {"id" => note.id, "body" => "Test Note Edit"}}

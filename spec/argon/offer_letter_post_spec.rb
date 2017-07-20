@@ -5,7 +5,7 @@ describe OfferLetterPost do
   it "gets a PDF from Argon" do
     json_data = '["document", {}, [ "paragraph", "Hello World!"]]'
     posting_service = double('posting_service').as_null_object
-    argon_url = "https://argon.8thlight.com/api/pdf"
+    argon_url = "https://argon.abcinc.com/api/pdf"
     params = {"api-key" => ENV['ARGON-API-KEY'], "piccup" => json_data}
 
     OfferLetterPost.get_pdf(json_data, posting_service)

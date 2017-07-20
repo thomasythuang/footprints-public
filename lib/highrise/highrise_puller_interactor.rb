@@ -6,7 +6,7 @@ module Interactor
     def initialize
       @repo = Footprints::Repository
       @last_six_months_applicants ||=  Highrise::Recording.find_all_across_pages_since(Time.now - 6.months).select { |r|
-        r.respond_to?(:title) && r.title == "8th Light Apprenticeship Application" }
+        r.respond_to?(:title) && r.title == "ABC, Inc. Apprenticeship Application" }
     end
 
     def get_applications(time)
@@ -14,7 +14,7 @@ module Interactor
         @last_six_months_applicants
       else
         Highrise::Recording.find_all_across_pages_since(time).select do |r|
-          r.respond_to?(:title) && r.title == "8th Light Apprenticeship Application"
+          r.respond_to?(:title) && r.title == "ABC, Inc. Apprenticeship Application"
         end
       end
     end
@@ -108,7 +108,7 @@ module Interactor
     def get_messages_for_applicants(time)
       recent = get_all_recent_applicants
       msg_count = 0
-      messages = Highrise::Recording.find_all_across_pages_since(time).select { |r| r.respond_to?(:title) && (r.title == "8th Light Apprenticeship" || r.title == "Re: 8th Light Apprenticeship")}
+      messages = Highrise::Recording.find_all_across_pages_since(time).select { |r| r.respond_to?(:title) && (r.title == "ABC, Inc. Apprenticeship" || r.title == "Re: ABC, Inc. Apprenticeship")}
       recent.each_pair do |id, name|
         message = messages.select { |r| r.respond_to?(:subject_name) && r.subject_name.downcase == name.downcase }
         msg_count += message.length

@@ -3,7 +3,7 @@ require 'highrise/highrise_puller_interactor'
 
 describe Interactor::HighrisePuller do
   let(:repo) { Footprints::Repository }
-  let(:application) { double("application", :body => "By:          Applicant\nEmail:       test@test.com\nPublication: http://www.google.com\n\n----\nQ: what's your story?\nA: \"story\"\n\n----\nQ: what do you love about writing software?\nA: \"software\"\n\n----\nQ: why do you want to be a(n) craftsman at 8th Light?\nA: \"craftsman\"\n", :subject_name => "Applicant", :created_at => Time.current, :location => "Chicago") }
+  let(:application) { double("application", :body => "By:          Applicant\nEmail:       test@test.com\nPublication: http://www.google.com\n\n----\nQ: what's your story?\nA: \"story\"\n\n----\nQ: what do you love about writing software?\nA: \"software\"\n\n----\nQ: why do you want to be a(n) craftsman at ABC, Inc.?\nA: \"craftsman\"\n", :subject_name => "Applicant", :created_at => Time.current, :location => "Chicago") }
   before(:each) do
     allow(Highrise::Recording).to receive(:find_all_across_pages_since) { [application] }
   end

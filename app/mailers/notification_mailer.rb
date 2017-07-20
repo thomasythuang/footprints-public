@@ -1,7 +1,7 @@
 require './lib/applicants/applicant_presenter'
 
 class NotificationMailer < ActionMailer::Base
-  default :from => "noreply@8thlight.com"
+  default :from => "noreply@abcinc.com"
 
   def applicant_request(craftsman, applicant)
     @craftsman = craftsman

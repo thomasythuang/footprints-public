@@ -11,7 +11,7 @@ describe ApprenticeListPresenter do
                               :id=>115,
                               :first_name=>"F",
                               :last_name=>"Resident",
-                              :email=>"f@8thlight.com",
+                              :email=>"f@abcinc.com",
                               :updated_at=>DateTime.parse("2014-09-01")},
                     :created_at=>"2014-01-01 08:50:00 UTC",
                     :start=>DateTime.parse("2014-09-01"),

@@ -10,7 +10,7 @@ describe Footprints::Reminder do
 
 
   before :all do
-    Craftsman.create(:name => "A. Craftsman", :email => "acraftsman@8thlight.com", :employment_id => "1234")
+    Craftsman.create(:name => "A. Craftsman", :email => "acraftsman@abcinc.com", :employment_id => "1234")
   end
 
   before :each do

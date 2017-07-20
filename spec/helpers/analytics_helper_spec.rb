@@ -6,7 +6,7 @@ describe AnalyticsHelper do
   before :each do
     repo.applicant.destroy_all
     repo.craftsman.destroy_all
-    craftsman = repo.craftsman.create(:name => "A Craftsman", :email => "acraftsman@8thlight.com", :employment_id => "7")
+    craftsman = repo.craftsman.create(:name => "A Craftsman", :email => "acraftsman@abcinc.com", :employment_id => "7")
     @applicant = repo.applicant.create(name: "Alice", email: "alice@bar.com", applied_on: Date.parse('20130115'), initial_reply_on: Date.parse('20130117'), codeschool: "Starter League",
                                       :discipline => "developer", :skill => "resident", :location => "Chicago")
     repo.applicant.create(name: "Bob", email: "bob@bar.com", applied_on: Date.parse('20130115'), initial_reply_on: Date.parse('20130117'),

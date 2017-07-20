@@ -7,7 +7,7 @@ module OfferLetterPost
   private
 
   def self.argon_url
-    "https://argon.8thlight.com/api/pdf"
+    "https://argon.abcinc.com/api/pdf"
   end
 
   def self.build_params(json_data)

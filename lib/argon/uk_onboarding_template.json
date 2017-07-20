@@ -32,7 +32,7 @@
       "family" : "frescosans-bold",
       "size" : 16
   }
-	}, "8th" ], [ "text", {
+	}, "ABC" ], [ "text", {
 	  "font" : {
 	    "color" : "black",
 	      "family" : "frescosans-bold",
@@ -92,7 +92,7 @@
 	  "top" : 15,
       "bottom" : 15
     }
-      }, "8th Light believes that the most basic building block of a fruitful apprenticeship is mutual understanding. A mentor and apprentice relationship that is not built on a clear set of expectations will waste the time and energy of all parties involved. This contract sets forth what is expected of you as an apprentice and what is expected of your mentor. It is a reminder to both of you of the responsibilities inherent in entering into this relationship. It is a resource to be referred to when guidance is needed." ],
+      }, "ABC, Inc. believes that the most basic building block of a fruitful apprenticeship is mutual understanding. A mentor and apprentice relationship that is not built on a clear set of expectations will waste the time and energy of all parties involved. This contract sets forth what is expected of you as an apprentice and what is expected of your mentor. It is a reminder to both of you of the responsibilities inherent in entering into this relationship. It is a resource to be referred to when guidance is needed." ],
 
   [ "paragraph", {
     "font" : {
@@ -110,7 +110,7 @@
     "padding" : {
       "bottom" : 25
     }
-  }, "As an apprentice of 8th light you acknowledge and understand the following:" ],
+  }, "As an apprentice of ABC, Inc. you acknowledge and understand the following:" ],
 
   [ "paragraph", {
     "font" : {
@@ -120,7 +120,7 @@
   	  "left" : 25,
       "bottom" : 15
     }
-  }, "1. The 8th Light apprenticeship program is a difficult and challenging opportunity. Like all opportunities, it will require my hard work and preparation to achieve success. Anything less than my full dedication will lead to a failed apprenticeship. My mentor cannot force me to reach the next level of my craft. They can guide and assist me, but I am my own driving force. " ],
+  }, "1. The ABC, Inc. apprenticeship program is a difficult and challenging opportunity. Like all opportunities, it will require my hard work and preparation to achieve success. Anything less than my full dedication will lead to a failed apprenticeship. My mentor cannot force me to reach the next level of my craft. They can guide and assist me, but I am my own driving force. " ],
 
   [ "paragraph", {
     "font" : {
@@ -130,7 +130,7 @@
 	  "left" : 25,
       "bottom" : 15
     }
-  }, "2. A completed apprenticeship is not a guarantee of employment at 8th Light. I understand that this program is an educational opportunity similar to a graduate level program in other disciplines. The goal for 8th Light is to hire all residents who succeed throughout their residency. Not being offered employment is not a sign of a failed apprenticeship, there are many external factors. If I succeed in my apprenticeship, I will have a honed set of skills that carry over to any work environment in my craft. " ],
+  }, "2. A completed apprenticeship is not a guarantee of employment at ABC, Inc.. I understand that this program is an educational opportunity similar to a graduate level program in other disciplines. The goal for ABC, Inc. is to hire all residents who succeed throughout their residency. Not being offered employment is not a sign of a failed apprenticeship, there are many external factors. If I succeed in my apprenticeship, I will have a honed set of skills that carry over to any work environment in my craft. " ],
 
   [ "paragraph", {
     "font" : {
@@ -140,7 +140,7 @@
 	  "left" : 25,
       "bottom" : 15
     }
-  }, "3. 8th Light is a business and seeks to maintain a professional environment. I will conduct myself in a professional manner in my apprenticeship. This includes proper attire in the work environment, courteousness to 8th Light clients, and allowing 8th Light employees space and time to deal with clients. We do not practice our craft in a vacuum. The client must always be in the front of our minds, as it is through their patronage that we are allowed to practice our craft. " ],
+  }, "3. ABC, Inc. is a business and seeks to maintain a professional environment. I will conduct myself in a professional manner in my apprenticeship. This includes proper attire in the work environment, courteousness to ABC, Inc. clients, and allowing ABC, Inc. employees space and time to deal with clients. We do not practice our craft in a vacuum. The client must always be in the front of our minds, as it is through their patronage that we are allowed to practice our craft. " ],
 
   [ "paragraph", {
     "font" : {
@@ -182,7 +182,7 @@
       "padding" : {
         "bottom" : 25
       }
-    }, "As a mentor of an 8th Light apprentice you acknowledge and understand he following: " ],
+    }, "As a mentor of an ABC, Inc. apprentice you acknowledge and understand he following: " ],
 
   [ "paragraph", {
       "font" : {
@@ -212,7 +212,7 @@
   	    "left" : 25,
         "bottom" : 15
       }
-    }, "3. My interactions with apprentices, clients, and other craftsman will be examples of how professionals conduct themselves. I will be a reflection of the culture we have created at 8th Light." ],
+    }, "3. My interactions with apprentices, clients, and other craftsman will be examples of how professionals conduct themselves. I will be a reflection of the culture we have created at ABC, Inc.." ],
 
   [ "paragraph", {
       "font" : {

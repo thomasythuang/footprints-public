@@ -5,7 +5,7 @@ describe SessionsController do
 
   it "flashes error and redirects to root if user cannot be logged in" do
     get :create
-    expect(flash[:error].join("")).to include("it@8thlight.com")
+    expect(flash[:error].join("")).to include("it@abcinc.com")
     expect(response).to redirect_to(oauth_signin_path)
   end
 

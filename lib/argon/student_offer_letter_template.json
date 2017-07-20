@@ -28,13 +28,13 @@
       "family" : "frescosans-bold",
       "size" : 16
   }
-}, "8th" ], [ "text", {
+}, "ABC" ], [ "text", {
   "font" : {
     "color" : "black",
       "family" : "frescosans-bold",
       "size" : 16
   }
-}, " Light, Inc." ] ], [ "paragraph", { }, [ "text", {
+}, " Inc." ] ], [ "paragraph", { }, [ "text", {
   "font" : {
     "color" : "black",
       "family" : "fresco",
@@ -92,6 +92,6 @@
 			"right" : 15,
 			"left" : 15
     }
-      }, "<TODAY'S DATE>\n\nDear <APPLICANT NAME>,\n\nCongratulations on beginning your student apprenticeship at 8th Light, Inc.! This is an exciting first step in a lifelong pursuit of mastery in the craft of software.\n\nThe term of your apprenticeship shall be from <START DATE> until <END DATE>. During this time, your mentor will be <MENTOR NAME>. You will work alongside other student apprentices, as well as our team of resident apprentices. You will also share resources with other apprentices, including our workspace at 412 S. Wells St.\n\nThe goals of the student apprenticeship are to learn about the fundamentals of writing good software, and to gain experience writing software.\n\nAs a reminder, there is no guarantee of employment at the end of the student apprenticeship. Students that are interested in a residency will be given feedback through the apprenticeship regarding whether or not they are on track to meet the requirements for residency.\n\n \n\n\n\nDate:____/____/20____\n\n\n\n\n\nDate:____/____/20____" ]
-			
+      }, "<TODAY'S DATE>\n\nDear <APPLICANT NAME>,\n\nCongratulations on beginning your student apprenticeship at ABC, Inc., Inc.! This is an exciting first step in a lifelong pursuit of mastery in the craft of software.\n\nThe term of your apprenticeship shall be from <START DATE> until <END DATE>. During this time, your mentor will be <MENTOR NAME>. You will work alongside other student apprentices, as well as our team of resident apprentices. You will also share resources with other apprentices, including our workspace at 412 S. Wells St.\n\nThe goals of the student apprenticeship are to learn about the fundamentals of writing good software, and to gain experience writing software.\n\nAs a reminder, there is no guarantee of employment at the end of the student apprenticeship. Students that are interested in a residency will be given feedback through the apprenticeship regarding whether or not they are on track to meet the requirements for residency.\n\n \n\n\n\nDate:____/____/20____\n\n\n\n\n\nDate:____/____/20____" ]
+
 ]

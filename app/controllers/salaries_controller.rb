@@ -16,7 +16,7 @@ class SalariesController < ApplicationController
   def update
     SalaryUpdater.new(params).update
     redirect_to "/salaries/edit", :notice => "Successfully updated salaries."
-  rescue StandardError => e
+  rescue Exception => e
     flash[:error] = [e.message]
     redirect_to "/salaries/edit"
   end

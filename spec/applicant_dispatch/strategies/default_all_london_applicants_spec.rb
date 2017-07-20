@@ -7,7 +7,7 @@ module ApplicantDispatch
 
       let(:london_candidate) {
         double(:london_candidate,
-               :email => "not_director@8thlight.com",
+               :email => "not_director@abcinc.com",
                :location => "London")
       }
 
@@ -19,7 +19,7 @@ module ApplicantDispatch
 
       let(:chicago_candidate) {
         double(:chicago_candidate_one,
-               :email => "not_director@8thlight.com",
+               :email => "not_director@abcinc.com",
                :location => "Chicago")
       }
 

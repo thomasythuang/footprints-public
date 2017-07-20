@@ -25,9 +25,9 @@ module Footprints
     config.encoding = "utf-8"
 
     if Rails.env.production?
-      host = "footprints.8thlight.com"
+      host = "footprints.abcinc.com"
     elsif Rails.env.staging?
-      host = "footprints-staging.8thlight.com"
+      host = "footprints-staging.abcinc.com"
     else
       host = "0.0.0.0"
     end

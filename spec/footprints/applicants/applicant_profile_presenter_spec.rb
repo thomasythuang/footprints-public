@@ -16,7 +16,7 @@ describe ApplicantProfilePresenter do
   let!(:craftsman) do
     Footprints::Repository.craftsman.create(
       :name => "A Craftsman",
-      :email => "acraftsman@8thlight.com",
+      :email => "acraftsman@abcinc.com",
       :employment_id => "7"
     )
   end

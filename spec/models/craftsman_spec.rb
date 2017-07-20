@@ -49,7 +49,7 @@ describe Craftsman do
 
   it "creates footprints steward on staging even when default employment_id is taken" do
     Craftsman.create(:name => "Test Craftsman", :employment_id => 999,
-                     :email => "testcraftsman@8thlight.com")
+                     :email => "testcraftsman@abcinc.com")
 
     Craftsman.create_footprints_steward(999)
     steward = Craftsman.find_by_email(ENV["STEWARD"])

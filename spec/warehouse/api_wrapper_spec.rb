@@ -27,7 +27,7 @@ describe Warehouse::APIWrapper do
                                                          :position_name => "Chief Executive Officer"}) }
   let(:mike) { Warehouse::SpecHelpers.create_employment({:id => 7,
                                                          :first_name => "Mike",
-                                                         :last_name => "Jansen",
+                                                         :last_name => "Rodriguez",
                                                          :email => "mj@8l.com",
                                                          :start => Date.today - 7,
                                                          :position_name => "Vice President of Operations"}) }

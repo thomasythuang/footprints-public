@@ -11,8 +11,8 @@ describe DashboardController do
   let(:archived_app)              { repo.applicant.create(name: "Archived App", applied_on: Date.today, email: "test3@test.com",
                                                           assigned_craftsman: "A. Craftsman", craftsman_id: craftsman.id, has_steward: true,
                                                           :discipline => "developer", :skill => "resident", :location => "Chicago", archived: true) }
-  let(:craftsman)                 { repo.craftsman.create(name: "A. Craftsman", employment_id: "123", email: "testcraftsman@8thlight.com") }
-  let(:current_user)              { repo.user.new({ :login => "A. Craftsman", :email => "testuser@8thlight.com"}) }
+  let(:craftsman)                 { repo.craftsman.create(name: "A. Craftsman", employment_id: "123", email: "testcraftsman@abcinc.com") }
+  let(:current_user)              { repo.user.new({ :login => "A. Craftsman", :email => "testuser@abcinc.com"}) }
   let(:assigned_applicant_record) { AssignedCraftsmanRecord.create(:applicant_id => not_yet_responded_app.id, :craftsman_id => craftsman.id) }
 
   it "redirects to login page when not logged in" do

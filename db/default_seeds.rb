@@ -12,29 +12,29 @@ module DefaultSeed
       puts "---------------------Adding Applicants----------------------"
 
       [
-        "Eric Dolphy", 
-        "Charlie Parker", 
-        "Paul Desmond", 
-        "John Coltrane", 
-        "Wayne Shorter", 
-        "Stan Getz", 
-        "Bill Evans", 
-        "Herbie Hancock", 
-        "Oscar Peterson", 
-        "Clifford Brown", 
-        "Miles Davis", 
-        "Booker Little", 
-        "Art Blakey", 
-        "Max Roach", 
-        "Buddy Rich", 
-        "Charles Mingus", 
-        "Ron Carter", 
-        "Paul Chambers", 
-        "JJ Johnson", 
-        "Jaco Pastorius", 
-        "Dave Brubeck", 
-        "Brian Blade", 
-        "Roy Hargrove", 
+        "Eric Dolphy",
+        "Charlie Parker",
+        "Paul Desmond",
+        "John Coltrane",
+        "Wayne Shorter",
+        "Stan Getz",
+        "Bill Evans",
+        "Herbie Hancock",
+        "Oscar Peterson",
+        "Clifford Brown",
+        "Miles Davis",
+        "Booker Little",
+        "Art Blakey",
+        "Max Roach",
+        "Buddy Rich",
+        "Charles Mingus",
+        "Ron Carter",
+        "Paul Chambers",
+        "JJ Johnson",
+        "Jaco Pastorius",
+        "Dave Brubeck",
+        "Brian Blade",
+        "Roy Hargrove",
         "Michael Brecker"
       ].each do |applicant|
         Footprints::Repository.applicant.create({
@@ -46,7 +46,7 @@ module DefaultSeed
           :applied_on => (1..365).to_a.sample.days.ago,
           :about => "My story is long and fascinating. Lorem ipsum dolor sit amet...",
           :software_interest => "Software is amazing! Lorem ipsum dolor sit amet...",
-          :reason => "8th Light is the best. Lorem ipsum dolor sit amet..."})
+          :reason => "Lorem ipsum dolor sit amet..."})
         puts "New applicant #{applicant} added to the #{Rails.env} environment"
       end
       puts "------------------------------------------------------------"
@@ -153,7 +153,7 @@ module DefaultSeed
           :applied_on => (1..365).to_a.sample.days.ago,
           :about => "My story is long and fascinating. Lorem ipsum dolor sit amet...",
           :software_interest => "Software is amazing! Lorem ipsum dolor sit amet...",
-          :reason => "8th Light is the best. Lorem ipsum dolor sit amet..."})
+          :reason => "Lorem ipsum dolor sit amet..."})
       end
 
       puts "------------------------------------------------------------"
@@ -165,32 +165,32 @@ module DefaultSeed
       puts "----------------------Adding Craftsmen----------------------"
 
       [
-        "Brian Pratt",
-        "Doug Bradbury",
-        "Eric Smith",
-        "Eric Meyer",
-        "Colin Jones",
-        "Mike Jansen",
-        "Craig Demyanovich",
-        "Kevin Liddle",
-        "Patrick Gombert",
-        "Ben Voss",
-        "Ginny Hendry",
-        "Jeremy Neander",
-        "Mike Ebert",
-        "Sandro Padin",
-        "Nathan Walker",
-        "Rylan Dirksen",
-        "Adam Kaplan",
-        "Andrew Kelly",
-        "Connor Mendenhall",
-        "Myles Megyesi"
+        "Tom Johannsen",
+        "Douglas Kles",
+        "Alan Abernathy",
+        "Julia Thompson",
+        "Robert Banks",
+        "Charlie Batch",
+        "Daniel Booth",
+        "Albert Carter",
+        "Rebecca Kirkland",
+        "Carol Buffett",
+        "Jimmy Watkins",
+        "Bruce Chatwin",
+        "Ray Smith",
+        "Joseph Conrad",
+        "Bryan Cooper",
+        "Dennis Drake",
+        "Peter Dillard",
+        "Helen Garfield",
+        "Colin Gonil",
+        ""
       ].each_with_index do |name, i|
         Footprints::Repository.craftsman.create({
           :name           => name,
           :location       => "Chicago",
           :employment_id  => i,
-          :email          => "#{name.downcase.gsub(' ', '.')}@8thlight.com",
+          :email          => "#{name.downcase.gsub(' ', '.')}@abcinc.com",
           :seeking        => true,
           :has_apprentice => [true, false].sample,
           :skill          => [1, 2].sample
@@ -200,7 +200,7 @@ module DefaultSeed
       end
 
       new_craftsman = Footprints::Repository.craftsman.create({
-        :name           => "Jim Suchy (London Director)",
+        :name           => "Russell Baker (London Director)",
         :location       => "London",
         :employment_id  => 103,
         :email          => ApplicantDispatch::Strategies::DefaultAllLondonApplicants::LONDON_DIRECTOR_EMAIL,
@@ -211,7 +211,7 @@ module DefaultSeed
       puts "#{new_craftsman.name} added to the #{Rails.env} environment"
 
       new_craftsman = Footprints::Repository.craftsman.create({
-        :name           => "Dave Moore (Los Angeles Director)",
+        :name           => "Clare Heyward (Los Angeles Director)",
         :location       => "Los Angeles",
         :employment_id  => 104,
         :email          => ApplicantDispatch::Strategies::DefaultAllLosAngelesApplicants::LOS_ANGELES_DIRECTOR_EMAIL,
@@ -222,7 +222,7 @@ module DefaultSeed
       puts "#{new_craftsman.name} added to the #{Rails.env} environment"
 
       new_craftsman = Footprints::Repository.craftsman.create({
-        :name           => "Stephanie Briones (Lead Designer)",
+        :name           => "Paul Goldman (Lead Designer)",
         :location       => "Chicago",
         :employment_id  => 105,
         :email          => ApplicantDispatch::Strategies::DefaultAllDesignApplicants::LEAD_DESIGNER_EMAIL,
@@ -233,7 +233,7 @@ module DefaultSeed
       puts "#{new_craftsman.name} added to the #{Rails.env} environment"
 
       new_craftsman = Footprints::Repository.craftsman.create({
-        :name           => "Ryan Verner (Steward)",
+        :name           => "Graham Hain (Steward)",
         :location       => "Chicago",
         :employment_id  => 100,
         :email          => ENV['STEWARD'],
@@ -243,11 +243,11 @@ module DefaultSeed
 
       puts "#{new_craftsman.name} added to the #{Rails.env} environment"
 
-      new_craftsman = Footprints::Repository.craftsman.create({ 
-        :name           => "Myranda Kröger",
+      new_craftsman = Footprints::Repository.craftsman.create({
+        :name           => "Natalie Snow",
         :location       => "Chicago",
         :employment_id  => 102,
-        :email          => "you@8thlight.com",
+        :email          => "you@abcinc.com",
         :seeking        => true,
         :has_apprentice => [true, false].sample,
         :skill          => [1, 2].sample})
@@ -274,10 +274,10 @@ module DefaultSeed
       puts "new user added to the #{Rails.env} environment"
 
       new_user = Footprints::Repository.user.create({
-        :login => "you@8thlight.com",
+        :login => "you@abcinc.com",
         :uid   => "107478018817920458918",
         :provider => "google_oauth2",
-        :email => "you@8thlight.com",
+        :email => "you@abcinc.com",
         :admin => true
       })
 

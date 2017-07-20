@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe NotificationMailer do
   let(:applicant) { mock_model Applicant, name: "Applicant", skill: 'skill', first_name: "App", email: 'test@test.com', applied_on: Date.today }
-  let(:craftsman) { mock_model Craftsman, name: "Craftsman", first_name: "Craft", email: "craftsman@8thlight.com", :employment_id => "12345" }
+  let(:craftsman) { mock_model Craftsman, name: "Craftsman", first_name: "Craft", email: "craftsman@abcinc.com", :employment_id => "12345" }
 
   describe "#applicant_request" do
     let(:mail) { NotificationMailer.applicant_request(craftsman, applicant) }
@@ -16,7 +16,7 @@ describe NotificationMailer do
     end
 
     it "renders the send" do
-      expect(mail.from).to eq(['noreply@8thlight.com'])
+      expect(mail.from).to eq(['noreply@abcinc.com'])
     end
 
     it "bcc's the footprints team" do

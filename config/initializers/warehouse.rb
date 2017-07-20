@@ -6,6 +6,6 @@ if Rails.env.local?
   WAREHOUSE_URL = "http://0.0.0.0:8080"
   Warehouse::APIFactory.class_name = Warehouse::FakeAPI
 else
-  WAREHOUSE_URL = "https://warehouse-staging.8thlight.com"
+  WAREHOUSE_URL = "https://warehouse-staging.abcinc.com"
   Warehouse::APIFactory.class_name = Warehouse::FakeAPI
 end

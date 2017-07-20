@@ -6,7 +6,7 @@ describe ApplicantMailer do
     let(:mail) { ApplicantMailer.email_applicant(applicant, "Email body") }
 
     it "renders the subject" do
-      expect(mail.subject).to eq( "8th Light Apprenticeship")
+      expect(mail.subject).to eq( "ABC, Inc. Apprenticeship")
     end
 
     it "renders the receiver email" do
@@ -14,11 +14,11 @@ describe ApplicantMailer do
     end
 
     it "renders the send email" do
-      expect(mail.from).to eq(['noreply@8thlight.com'])
+      expect(mail.from).to eq(['noreply@abcinc.com'])
     end
 
     it "renders the bcc email" do
-      expect(mail.bcc).to eq(["dropbox@92013697.8thlight.highrisehq.com"])
+      expect(mail.bcc).to eq(["dropbox@92013697.abcinc.highrisehq.com"])
     end
 
     it "renders the body" do
