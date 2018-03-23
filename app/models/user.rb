@@ -1,15 +1,24 @@
 require './lib/repository'
 
 class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
   include ActiveModel::Validations
 
-  belongs_to :craftsman
   before_create :associate_craftsman
 
   def associate_craftsman
     craftsman = Craftsman.find_by_email(self.email)
     self.craftsman_id = craftsman.employment_id if craftsman
   end
+
+  # SUPER HACKY DO NOT MERGE WITH THIS IN HERE
+  def craftsman
+    @craftsman ||= ::Craftsman.find(1)
+  end
+
 
   private
 

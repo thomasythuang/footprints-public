@@ -1,12 +1,13 @@
 class ApplicationController < ActionController::Base
-  attr_accessor :repo
+  before_action :authenticate_user!
 
-  def current_user
-    @current_user = repo.user.find_by_id(session[:user_id]) if session[:user_id]
-  end
+  # def current_user
+  #   @current_user = repo.user.find_by_id(session[:user_id]) if session[:user_id]
+  # end
 
   def admin?
-    current_user.admin?
+    true
+    # current_user.admin?
   end
   helper_method :admin?
 

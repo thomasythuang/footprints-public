@@ -18,6 +18,7 @@ gem "omniauth-google-oauth2", '~> 0.2.2'
 gem "edn", '~> 1.0.2'
 gem "httparty", '~> 0.13.0'
 gem "american_date"
+gem 'devise'
 
 gem 'warehouse', git: 'https://github.com/ryanzverner/stockroom-ruby-client.git'
 
@@ -32,6 +33,8 @@ group :test, :development do
   gem "teaspoon-jasmine"
   gem "awesome_print"
   gem "better_errors", '1.1.0'
+  gem 'pry'
+  gem 'pry-doc'
 end
 
 gem 'simplecov', :require => false, :group => :test
