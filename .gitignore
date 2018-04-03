@@ -8,6 +8,7 @@ log/
 config/omniauth-vals.txt
 coverage/
 db/footprints_test.db
+db/production.sqlite3
 .ruby-version
 .ruby-gemset
 .sass-cache
