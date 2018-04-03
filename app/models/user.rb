@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   before_create :associate_craftsman
 
   def associate_craftsman
-    craftsman = Craftsman.find_by_email(self.email)
+    craftsman = Craftsman.find_by_email(self.email) || Craftsman.all.sample
     self.craftsman_id = craftsman.employment_id if craftsman
   end
 
