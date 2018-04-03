@@ -10,6 +10,15 @@ class User < ActiveRecord::Base
   belongs_to :craftsman
   before_create :associate_craftsman
 
+  validate :password_complexity
+  def password_complexity
+    if password.present?
+      if !password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/)
+        errors.add :password, "must have a number, lowercase, uppercase and special character"
+      end
+    end
+  end
+
   def associate_craftsman
     craftsman = Craftsman.find_by_email(self.email) || Craftsman.all.sample
     self.craftsman_id = craftsman.employment_id if craftsman
