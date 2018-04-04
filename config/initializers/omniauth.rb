@@ -1,7 +1,7 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
   OmniAuth.config.logger = Rails.logger
 
-  if Rails.env.development? || Rails.env.test?
+  if false
     OmniAuth.config.test_mode = true
 
     OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
@@ -16,7 +16,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
       extra: {
         id_token: "ID_TOKEN"
       }
-                                                                       })
+    })
 
     provider :google_oauth2
   else
