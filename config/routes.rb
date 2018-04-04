@@ -1,6 +1,6 @@
 Footprints::Application.routes.draw do
 
-  get 'users/sign_in' => 'sessions#oauth_signin', :as => :oauth_signin
+  # get 'users/sign_in' => 'sessions#oauth_signin', :as => :oauth_signin
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
@@ -58,7 +58,7 @@ Footprints::Application.routes.draw do
   delete "salaries/:id" => "salaries#destroy", as: "destroy_salary"
 
   get "reporting" => "reporting#index", as: "reporting"
-  
+
   get "apprentices" => "apprentices#index", as: "apprentices"
   get "apprentices/:id" => "apprentices#edit"
   put "apprentices/:id" => "apprentices#update"
