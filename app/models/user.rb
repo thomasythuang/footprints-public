@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   belongs_to :craftsman
   before_create :associate_craftsman
 
-  validate :password_complexity
+  # validate :password_complexity
   def password_complexity
     if password.present?
       if !password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*\-+;:'"])/)
