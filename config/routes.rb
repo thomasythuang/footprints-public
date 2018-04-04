@@ -4,7 +4,7 @@ Footprints::Application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
-  get 'auth/google_oauth2/callback', to: 'sessions#create', :as => :new_session
+  get 'auth/google_oauth2/callback', to: 'users/omniauth_callbacks#google_oauth2', :as => :new_session
   delete 'sessions/destroy', :as => :sessions_destroy
   get "applicants" => 'applicants#index'
   get "applicants/unassigned" => 'applicants#unassigned', as: 'unassigned_applicants'
@@ -58,7 +58,7 @@ Footprints::Application.routes.draw do
   delete "salaries/:id" => "salaries#destroy", as: "destroy_salary"
 
   get "reporting" => "reporting#index", as: "reporting"
-  
+
   get "apprentices" => "apprentices#index", as: "apprentices"
   get "apprentices/:id" => "apprentices#edit"
   put "apprentices/:id" => "apprentices#update"

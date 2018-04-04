@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   belongs_to :craftsman
   before_create :associate_craftsman
 
-  validate :password_complexity
+  # validate :password_complexity
   def password_complexity
     if password.present?
       if !password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*\-+;:'"])/)
@@ -30,12 +30,12 @@ class User < ActiveRecord::Base
     user = User.where(email: data['email']).first
 
     # Uncomment the section below if you want users to be created if they don't exist
-    # unless user
-    #     user = User.create(name: data['name'],
-    #        email: data['email'],
-    #        password: Devise.friendly_token[0,20]
-    #     )
-    # end
+    unless user
+        user = User.create(
+           email: data['email'],
+           password: Devise.friendly_token[0,20]
+        )
+    end
     user
   end
 
