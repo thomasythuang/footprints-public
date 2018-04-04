@@ -1,5 +1,7 @@
 require './lib/repository'
 
+class NotACraftsmanError < StandardError; end
+
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -11,7 +13,7 @@ class User < ActiveRecord::Base
   belongs_to :craftsman
   before_create :associate_craftsman
 
-  validate :password_complexity
+  # validate :password_complexity AMAZING method that's unfortunately not currently needed
   def password_complexity
     if password.present?
       if !password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*\-+;:'"])/)
@@ -21,7 +23,7 @@ class User < ActiveRecord::Base
   end
 
   def associate_craftsman
-    craftsman = Craftsman.find_by_email(self.email) || Craftsman.all.sample
+    craftsman = Craftsman.find_by_email(self.email)
     self.craftsman_id = craftsman.employment_id if craftsman
   end
 
@@ -30,12 +32,9 @@ class User < ActiveRecord::Base
     user = User.where(email: data['email']).first
 
     # Uncomment the section below if you want users to be created if they don't exist
-    # unless user
-    #     user = User.create(name: data['name'],
-    #        email: data['email'],
-    #        password: Devise.friendly_token[0,20]
-    #     )
-    # end
+    unless user.present?
+      raise ::NotACraftsmanError, "Unauthorized Login"
+    end
     user
   end
 
