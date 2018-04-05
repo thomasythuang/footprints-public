@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
   end
 
   def employee?
-    redirect_to(oauth_signin_url, :notice => "You don't have permission to view this page.") if !current_user || current_user.email.nil? || !current_user.email.include?("abcinc.com")|| current_user.uid == nil
+    redirect_to(new_user_session_url, :notice => "You don't have permission to view this page.") if !current_user || current_user.email.nil? || !current_user.email.include?("abcinc.com")|| current_user.uid == nil
   end
 
   def require_admin
@@ -32,9 +32,9 @@ class ApplicationController < ActionController::Base
 
   def redirect_request
     if is_ajax_request
-      redirect_to oauth_signin_url, :status => :unauthorized
+      redirect_to new_user_session_url, :status => :unauthorized
     else
-      redirect_to oauth_signin_url, :notice => "Please sign in through Google."
+      redirect_to new_user_session_url, :notice => "Please sign in through Google."
     end
   end
 

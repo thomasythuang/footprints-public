@@ -1,9 +1,12 @@
 shared_examples "user repository" do
   let(:repo) { described_class.new }
-  let(:attrs) {{
-    :login => "test@user.com",
-    :email => "test@user.com" }}
-
+  let(:attrs) do
+    {
+      :login => "test@user.com",
+      :email => "test@user.com",
+      :password => "Password123!"
+    }
+  end
   let(:user) { repo.create(attrs) }
 
   let(:auth_hash) {{

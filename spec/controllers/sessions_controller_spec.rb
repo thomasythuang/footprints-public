@@ -6,7 +6,7 @@ describe SessionsController do
   it "flashes error and redirects to root if user cannot be logged in" do
     get :create
     expect(flash[:error].join("")).to include("it@abcinc.com")
-    expect(response).to redirect_to(oauth_signin_path)
+    expect(response).to redirect_to(new_user_session_url)
   end
 
   it "logs an error message when user cannot be logged in" do
@@ -98,7 +98,7 @@ describe SessionsController do
         get :create
 
         expect(flash[:error].join("")).to include 'not authorized'
-        expect(response).to redirect_to(oauth_signin_path)
+        expect(response).to redirect_to(new_user_session_url)
       end
 
       class WarehousePrefetchCraftsmenWithAuthorizationError

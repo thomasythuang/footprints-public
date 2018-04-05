@@ -22,7 +22,7 @@ describe ApplicationController do
     it "redirects to log in page" do
       get :index
 
-      expect(response).to redirect_to(oauth_signin_path)
+      expect(response).to redirect_to(new_user_session_url)
     end
   end
 

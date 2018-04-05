@@ -40,6 +40,8 @@ class User < ActiveRecord::Base
 
   private
 
+  attr_accessor :encrypted_password
+
   def self.find_or_create_by_auth_hash(hash)
     if user = User.find_by_uid(hash['uid'])
       return user
