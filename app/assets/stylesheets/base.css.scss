@@ -1262,6 +1262,11 @@ input.required {
     padding: 2em 0;
     text-transform: uppercase;
   }
+
+  .alert-warning {
+    color: $red;
+    font-weight: 600;
+  }
 }
 
 /* Overrides
