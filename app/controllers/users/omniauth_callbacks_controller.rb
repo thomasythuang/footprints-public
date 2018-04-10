@@ -14,6 +14,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       session['devise.google_data'] = request.env['omniauth.auth'].except(:extra) # Removing extra as it can overflow some session stores
       redirect_to new_user_registration_url, alert: @user.errors.full_messages.join("\n")
     end
+  rescue ::NotACraftsmanError => e
+    redirect_to oauth_signin_path, notice: e.message
   end
 
   def prefetch_craftsmen
