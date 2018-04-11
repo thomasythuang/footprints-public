@@ -9,6 +9,8 @@ common: &common
 production:
   <<: *common
   database: footprints-public_production
+  host: localhost
+  username: pguser
 
 development:
   <<: *common
