@@ -18,7 +18,7 @@ gem "omniauth-google-oauth2"
 gem "edn", '~> 1.0.2'
 gem "httparty", '~> 0.13.0'
 gem "american_date"
-gem 'sqlite3', '~> 1.3.9'
+gem 'pg'
 gem 'devise'
 
 gem 'warehouse', git: 'https://github.com/ryanzverner/stockroom-ruby-client.git'
@@ -32,7 +32,6 @@ group :doc do
 end
 
 group :test, :development do
-  #gem "sqlite3", '~> 1.3.9'
   gem "rspec-rails", '~> 2.14.1'
   gem "teaspoon"
   gem "teaspoon-jasmine"
@@ -44,6 +43,5 @@ gem 'simplecov', :require => false, :group => :test
 
 group :production do
   gem 'unicorn', '~> 4.8.2'
-  #gem 'mysql2', '~> 0.3.15'
 end
 
