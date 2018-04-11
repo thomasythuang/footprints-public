@@ -3,7 +3,9 @@ require './lib/dashboard/dashboard_interactor'
 
 class DashboardController < ApplicationController
   def index
-    @craftsman = current_user.craftsman
+    @craftsman = current_user.try(:craftsman)
+    redirect_to oauth_signin_path unless @craftsman
+
     @confirmed_applicants = interactor.confirmed_applicants(@craftsman)
     @not_yet_responded_applicants = interactor.not_yet_responded_applicants(@craftsman)
     @presenter = ApplicantIndexPresenter.new(@confirmed_applicants)
