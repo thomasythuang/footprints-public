@@ -1,12 +1,16 @@
 require 'spec_helper'
 
 describe User do
-  let(:auth_hash) {{
-    'provider' => 'google_oauth2',
-    'uid' => '12345',
-    'info' => {
-    'email' => 'test@user.com'}
-  }}
+  let(:auth_hash) do
+    {
+      'provider' => 'google_oauth2',
+      'uid' => '12345',
+      'info' => {
+        'email' => 'test@user.com',
+        'password' => 'Password123!'
+      }
+    }
+  end
 
   before :each do
     User.destroy_all
