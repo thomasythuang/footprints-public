@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140904131223) do
+ActiveRecord::Schema.define(version: 20180416211434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20140904131223) do
     t.string "location", null: false
     t.float  "amount",   null: false
   end
+
+  add_index "annual_starting_craftsman_salaries", ["location"], name: "location_uniquness", unique: true, using: :btree
 
   create_table "applicants", force: true do |t|
     t.string   "name"
@@ -86,6 +88,8 @@ ActiveRecord::Schema.define(version: 20140904131223) do
     t.date    "unavailable_until"
   end
 
+  add_index "craftsmen", ["employment_id"], name: "employment_id_uniqueness", unique: true, using: :btree
+
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
     t.integer  "sluggable_id",              null: false
@@ -114,6 +118,8 @@ ActiveRecord::Schema.define(version: 20140904131223) do
     t.string  "location", null: false
     t.float   "amount",   null: false
   end
+
+  add_index "monthly_apprentice_salaries", ["duration", "location"], name: "duration_location_uniquness", unique: true, using: :btree
 
   create_table "notes", force: true do |t|
     t.text     "body"
