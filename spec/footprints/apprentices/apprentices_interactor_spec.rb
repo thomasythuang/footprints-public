@@ -2,41 +2,41 @@ require 'warehouse/spec_helpers/employment_factory'
 require 'spec_helper'
 require 'apprentices/apprentices_interactor'
 
-describe ApprenticesInteractor do 
+describe ApprenticesInteractor do
   let(:mike) { Warehouse::SpecHelpers.create_employment({:id => 5, :first_name => "Mike",
                                                          :last_name => "Halpert",
                                                          :email => "jhalpert@dundermiffline.com",
-                                                         :start => Date.today,
-                                                         :end => Date.tomorrow,
+                                                         :start => Date.current,
+                                                         :end => Date.current + 2.day,
                                                          :position_name => "Software Resident"})}
 
   let(:frank) { Warehouse::SpecHelpers.create_employment({:id => 5, :first_name => "Mike",
                                                           :last_name => "Halpert",
                                                           :email => "jhalpert@dundermiffline.com",
-                                                          :start => Date.today,
-                                                          :end => Date.tomorrow,
+                                                          :start => Date.current,
+                                                          :end => Date.current + 2.day,
                                                           :position_name => "Not a Software Resident"})}
 
   let(:sarah) { Warehouse::SpecHelpers.create_employment({:id => 5, :first_name => "Sarah",
                                                           :last_name => "Halpert",
                                                           :email => "jhalpert@dundermiffline.com",
-                                                          :start => 2.days.ago,
-                                                          :end => 1.day.ago,
+                                                          :start => Date.current - 2.days,
+                                                          :end => Date.current - 1.day,
                                                           :position_name => "Software Resident"})}
 
-  let(:bob_resident) { Warehouse::SpecHelpers.create_employment({:id=> 5, :first_name => "bob",            
+  let(:bob_resident) { Warehouse::SpecHelpers.create_employment({:id=> 5, :first_name => "bob",
                                                                 :last_name => "Halpert",
                                                                 :email => "jhalpert@dundermiffline.com",
-                                                                :start => 4.days.ago,
-                                                                :end => 3.day.ago,
+                                                                :start => Date.current - 4.days,
+                                                                :end => Date.current - 3.days,
                                                                 :p_id => 1,
                                                                 :position_name => "Software Resident"})}
 
   let(:bob_craft) { Warehouse::SpecHelpers.create_employment({:id => 6, :first_name => "bob",
                                                                    :last_name => "Halpert",
                                                                    :email => "jhalpert@dundermiffline.com",
-                                                                   :start => 2.days.ago,
-                                                                   :end => 1.day.ago,
+                                                                   :start => Date.current - 2.days,
+                                                                   :end => Date.current - 1.day,
                                                                    :p_id => 1,
                                                                    :position_name => "Software Craftsman"})}
 
@@ -63,18 +63,18 @@ describe ApprenticesInteractor do
     it 'fetches all current students' do
       old_student = {
         :skill_level => "student",
-        :start => 2.days.ago,
-        :end => 1.day.ago
+        :start => Date.current - 2.days,
+        :end => Date.current - 1.day
       }
       new_student = {
         :skill_level => "student",
-        :start => 2.days.ago,
-        :end => 2.days.from_now
+        :start => Date.current - 2.days,
+        :end => Date.current + 2.days
       }
       new_resident = {
         :skill_level => "resident",
-        :start => 2.days.ago,
-        :end => 2.days.from_now
+        :start => Date.current - 1.day,
+        :end => Date.current + 2.day
       }
       allow_any_instance_of(Warehouse::FakeAPI).to receive(:find_all_apprenticeships).and_return([new_student, old_student, new_resident])
 

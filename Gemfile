@@ -21,7 +21,7 @@ gem "american_date"
 gem 'pg'
 gem 'devise'
 
-gem 'warehouse', git: 'https://github.com/ryanzverner/stockroom-ruby-client.git'
+gem 'stockroom', git: 'https://github.com/ryanzverner/stockroom-ruby-client.git'
 
 group :development do
   gem 'pry-byebug'

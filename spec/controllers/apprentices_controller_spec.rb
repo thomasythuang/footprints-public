@@ -61,7 +61,7 @@ describe ApprenticesController do
 
   context "PUT #update" do
     it "responds 302 after updating a resident" do
-      put :update, :id => "208", :apprentice => {:end_date => Date.tomorrow}
+      put :update, :id => "208", :apprentice => {:end_date => Date.current + 2.day}
       expect(response.status).to eq(302)
     end
 
@@ -71,7 +71,7 @@ describe ApprenticesController do
     end
 
     it "redirects to the resident show page" do
-      put :update, :id => "208", :apprentice => {:end_date => Date.tomorrow}
+      put :update, :id => "208", :apprentice => {:end_date => Date.current + 2.day}
       expect(response).to redirect_to("/apprentices/")
     end
   end

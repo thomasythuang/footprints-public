@@ -12,10 +12,19 @@ describe DashboardController do
                                                           assigned_craftsman: "A. Craftsman", craftsman_id: craftsman.id, has_steward: true,
                                                           :discipline => "developer", :skill => "resident", :location => "Chicago", archived: true) }
   let(:craftsman)                 { repo.craftsman.create(name: "A. Craftsman", employment_id: "123", email: "testcraftsman@abcinc.com") }
-  let(:current_user)              { repo.user.new({ :login => "A. Craftsman", :email => "testuser@abcinc.com"}) }
+  let(:current_user) do
+    repo.user.create(
+      {
+        :login => "A. Craftsman",
+        :email => "testuser@abcinc.com",
+        :password => 'Password123!'
+      }
+    )
+  end
   let(:assigned_applicant_record) { AssignedCraftsmanRecord.create(:applicant_id => not_yet_responded_app.id, :craftsman_id => craftsman.id) }
 
   it "redirects to login page when not logged in" do
+    allow(subject).to receive(:current_user).and_return(current_user)
     get :index
     expect(response).to redirect_to(oauth_signin_path)
   end
@@ -28,8 +37,8 @@ describe DashboardController do
 
   context "when logged in and employee" do
     before :each do
+      allow(controller).to receive(:current_user).and_return(current_user)
       controller.stub(:current_user).and_return(current_user)
-      controller.stub(:authenticate)
       controller.stub(:employee?)
       current_user.update_attribute(:craftsman_id, craftsman.id)
     end

@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe ApplicantsController do
+  login_user
+
   let(:applicant)            { Footprints::Repository.applicant.new }
   let(:repo)                 { Footprints::Repository }
   let(:applied_date)         { Date.today - 7.days }

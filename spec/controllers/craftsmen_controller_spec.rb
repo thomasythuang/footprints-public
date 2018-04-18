@@ -5,28 +5,19 @@ describe CraftsmenController do
   let(:repo) { Footprints::Repository }
   let(:test_date) { (Date.today + 2) }
 
-  before :each do
-    repo.craftsman.destroy_all
-  end
+  let(:craftsman) { double('craftsman') }
 
-  it "sets return_to url in session when redirecting to log in" do
-    get :profile
-    expect(session[:return_to]).to eq profile_url
+  before :each do
+    # remove when controller macro signs in user
+    allow(controller).to receive(:current_user) { double('user', craftsman: craftsman) }
   end
 
   context "no authentication" do
-
-    before :each do
-      controller.stub(:authenticate)
-      controller.stub(:employee?)
-    end
-
     context "GET profile" do
-      let(:craftsman) { SpecHelpers::CraftsmanFactory.new.create }
-      let(:current_user) { double(:craftsman => craftsman) }
+      # this isn't signing in the user
+      login_user
 
       it "assigns current_user's craftsman" do
-        allow(controller).to receive(:current_user) { current_user }
         get :profile
         expect(assigns(:craftsman)).to eq(craftsman)
       end

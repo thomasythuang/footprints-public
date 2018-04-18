@@ -14,3 +14,4 @@ db/production.sqlite3
 .sass-cache
 sinatra/
 .rspec-local
+db/*.db3

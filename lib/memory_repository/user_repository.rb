@@ -31,19 +31,5 @@ module MemoryRepository
     def find_by_login(login)
       records.values.find { |r| r.login == login }
     end
-
-    def find_or_create_by_auth_hash(hash)
-      if user = self.find_by_uid(hash['uid'])
-        return user
-      end
-
-      user = MemoryRepository::User.new
-      user.email = user.login = hash['info']['email']
-      user.uid = hash['uid']
-      user.provider = hash['provider']
-      save(user)
-      user
-    end
-
   end
 end
