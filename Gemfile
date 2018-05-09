@@ -20,11 +20,17 @@ gem "httparty", '~> 0.13.0'
 gem "american_date"
 gem 'pg'
 gem 'devise'
+gem 'puma'
 
 gem 'stockroom', git: 'https://github.com/ryanzverner/stockroom-ruby-client.git'
 
 group :development do
   gem 'pry-byebug'
+  gem "capistrano", "~> 3.10", require: false
+  gem 'capistrano-rvm',     require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
 end
 
 group :doc do
