@@ -1,0 +1,33 @@
+--- # From project directory, run: ansible-playbook config/ansible/passenger_test.yml
+# Requires hosts and ansible.cfg files to be set properly in /etc/ansible
+- hosts: webserver
+  become: true
+  gather_facts: false
+  pre_tasks:
+  - name: Install python2 for Ansible
+    raw: bash -c "test -e /usr/bin/python || (apt -qqy update && apt install -qqy python-minimal)"
+    register: output
+    changed_when: output.stdout != ""
+  - name: Gathering Facts
+    setup:
+  tasks:
+  - name: Copy passenger/nginx installation script
+    template:
+      src: install-passenger.sh
+      dest: ~/install-passenger.sh
+  - name: Install passenger/nginx
+    shell: /usr/bin/env bash ~/install-passenger.sh
+  - name: Upload configuration files
+    template:
+      src: "{{ item.src }}"
+      dest: "{{ item.dest }}"
+    with_items:
+      - {src: 'nginx.conf', dest: '/etc/nginx/nginx.conf'}
+      - {src: 'footprints-public-nossl.conf', dest: '/etc/nginx/sites-enabled/footprints-public.conf'}
+      - {src: 'nginx-bugfix.sh', dest: '~/nginx-bugfix.sh'}
+  - name: Run script to fix known nginx bug # https://github.com/exodus4d/pathfinder/issues/283
+    shell: /usr/bin/env bash ~/nginx-bugfix.sh
+  - name: Restart nginx
+    raw: sudo service nginx restart
+
+  - debug: msg="{{ ansible_nodename }} (via Gathered Facts from 'setup')"
