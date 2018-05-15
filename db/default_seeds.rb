@@ -384,12 +384,12 @@ module DefaultSeed
 end
 
 
-if Rails.env == "development"
-  DefaultSeed.craftsman
-  DefaultSeed.user
-elsif Rails.env == "staging"
-  DefaultSeed.staging_steward
-end
+#if Rails.env == "development"
+DefaultSeed.craftsman
+DefaultSeed.user
+#elsif Rails.env == "staging"
+#  DefaultSeed.staging_steward
+#end
 
 DefaultSeed.applicant
 DefaultSeed.assign_craftsmen
