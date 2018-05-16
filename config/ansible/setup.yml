@@ -1,0 +1,17 @@
+---
+- hosts: webserver
+  become: true
+  gather_facts: false
+
+  tasks:
+    - name: Upload configuration files
+      template:
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+      with_items:
+        - {src: 'setup-rails.sh', dest: '~/setup-rails.sh'}
+        - {src: 'setup-footprints.sh', dest: '~/setup-footprints.sh'}
+    - name: Install project dependencies (ruby, rails, postgres, etc.)
+      shell: /usr/bin/env bash ~/setup-rails.sh
+    - name: Configure and setup Footprints project
+      shell: /usr/bin/env bash ~/setup-footprints.sh
