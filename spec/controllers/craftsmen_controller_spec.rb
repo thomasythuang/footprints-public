@@ -5,7 +5,8 @@ describe CraftsmenController do
   let(:repo) { Footprints::Repository }
   let(:test_date) { (Date.today + 2) }
 
-  let(:user) { double('user') }
+  let(:user) { double('user', avatar: avatar) }
+  let(:avatar) { double('avatar', url: 'https://example.com/foo.jpg') }
 
   before :each do
     # remove when controller macro signs in user
@@ -20,6 +21,11 @@ describe CraftsmenController do
       it "assigns current_user" do
         get :profile
         expect(assigns(:user)).to eq(user)
+      end
+
+      it "assigns a avatar url" do
+        get :profile
+        expect(assigns(:avatar_url)).to eq(avatar.url)
       end
     end
 

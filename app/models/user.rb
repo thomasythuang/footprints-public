@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
          :omniauthable, omniauth_providers: [:google_oauth2]
   include ActiveModel::Validations
 
+  mount_uploader :avatar, AvatarUploader
+
   belongs_to :craftsman
   before_create :associate_craftsman
 
