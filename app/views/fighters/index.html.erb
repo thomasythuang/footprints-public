@@ -2,8 +2,9 @@
   <div class="row">
   <% if @fighter %>
     <h1><%= @fighter.name %></h1>
-    <h4><%= @fighter.email %></h4>
+    <%= image_tag(@fighter.avatar.url, class: 'avatar') %>
 
+    <p><%= @fighter.email %></p>
     <p><%= @fighter.description %></p>
 
     <%= link_to 'Pass', create_challenge_path(target_user: @fighter.id, challenged: false), method: 'post', class: 'button secondary' %>
