@@ -4,10 +4,8 @@ require './lib/craftsmen/craftsmen_presenter'
 require './lib/craftsmen/skills'
 
 class CraftsmenController < ApplicationController
-  before_filter :normalize_status, :only => [:index]
-
   def profile
-    @craftsman = current_user.craftsman
+    @user = current_user
   end
 
   def seeking
@@ -17,27 +15,14 @@ class CraftsmenController < ApplicationController
   end
 
   def update
-    @craftsman = current_user.craftsman
-    interactor = CraftsmenInteractor.new(@craftsman)
-    interactor.update(craftsman_params)
+    current_user.update!(user_params)
 
     redirect_to profile_path, :notice => "Successfully saved profile"
-  rescue CraftsmenInteractor::InvalidData => e
-    @craftsman.attributes = craftsman_params
-
-    flash.now[:error] = [e.message]
-    render :profile
   end
 
   private
 
-  def normalize_status
-    if params["craftsman"]
-      params["craftsman"]["status"] = params["craftsman"]["status"].titleize
-    end
-  end
-
-  def craftsman_params
-    params.require(:craftsman).permit(:status, :has_apprentice, :seeking, :skill, :location, :unavailable_until)
+  def user_params
+    params.require(:user).permit(:description)
   end
 end

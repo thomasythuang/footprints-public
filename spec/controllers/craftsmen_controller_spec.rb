@@ -5,11 +5,11 @@ describe CraftsmenController do
   let(:repo) { Footprints::Repository }
   let(:test_date) { (Date.today + 2) }
 
-  let(:craftsman) { double('craftsman') }
+  let(:user) { double('user') }
 
   before :each do
     # remove when controller macro signs in user
-    allow(controller).to receive(:current_user) { double('user', craftsman: craftsman) }
+    allow(controller).to receive(:current_user) { user }
   end
 
   context "no authentication" do
@@ -17,47 +17,27 @@ describe CraftsmenController do
       # this isn't signing in the user
       login_user
 
-      it "assigns current_user's craftsman" do
+      it "assigns current_user" do
         get :profile
-        expect(assigns(:craftsman)).to eq(craftsman)
+        expect(assigns(:user)).to eq(user)
       end
     end
 
     context "PUT update" do
-      let(:craftsman) { SpecHelpers::CraftsmanFactory.new.create }
-      let(:current_user) { double(:craftsman => craftsman) }
-      let(:craftsman_params) { { :seeking => true,
-                                 :has_apprentice => true,
-                                 :location => "London",
-                                 :skill => "" } }
+      let(:current_user) { double('user') }
 
       before :each do
+        allow(current_user).to receive(:update!)
         allow(controller).to receive(:current_user) { current_user }
       end
 
-      it "assigns current_user's craftsman" do
-        put :update, {:craftsman => {:thing => "stuff"}}
-        expect(assigns(:craftsman)).to eq(craftsman)
-      end
+      it "updates user record" do
+        description = 'Fight me!'
+        params = { user: { description: description } }
 
-      it "updates craftsman record" do
-        params = { :craftsman => craftsman_params.merge(:unavailable_until => test_date, :skill => "2") }
+        expect(current_user).to receive(:update!).with('description' => description)
+
         put :update, params
-        expect(craftsman.seeking).to be_true
-        expect(craftsman.has_apprentice).to be_true
-        expect(craftsman.location).to eq("London")
-        expect(craftsman.unavailable_until).to eq(test_date)
-        expect(craftsman.skill).to eq(Skills.available_skills["Resident"])
-        expect(response).to redirect_to(profile_path)
-        expect(flash[:notice]).to eq("Successfully saved profile")
-      end
-
-      it 'does not lose entered data on validation errors' do
-        params = { :craftsman => craftsman_params.merge(:unavailable_until => test_date) }
-        put :update, params
-
-        expect(assigns(:craftsman).unavailable_until).to eq test_date
-        expect(flash[:error]).to have_at_least(1).item
       end
     end
 
