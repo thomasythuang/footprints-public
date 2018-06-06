@@ -1,0 +1,28 @@
+<div class="container matches">
+  <div class="row">
+  <% if @matched_fighters.present? %>
+    <div class="column full">
+      <table id="matches-table">
+        <h2>Matched Challenges</h2>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @matched_fighters.each do |fighter| %>
+            <tr>
+              <td><%= fighter.name %></td>
+              <td><%= fighter.email %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% else %>
+    <h4>No Matches</h4>
+    <p>You currently have no matches. Check back later or challenge some more fighters!</p>
+  <% end %>
+  </div>
+</div>

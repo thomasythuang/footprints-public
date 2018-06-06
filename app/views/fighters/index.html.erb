@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+  <% if @fighter %>
+    <h1><%= @fighter.name %></h1>
+    <h4><%= @fighter.email %></h4>
+
+    <p><%= @fighter.description %></p>
+
+    <%= link_to 'Pass', create_challenge_path(target_user: @fighter.id, challenged: false), method: 'post', class: 'button secondary' %>
+    <%= link_to 'Challenge', create_challenge_path(target_user: @fighter.id, challenged: true), method: 'post', class: 'button primary' %>
+  <% else %>
+    <h4>No Fighters Available </h4>
+    <p>You have viewed all possible fighters. Check again later</p>
+  <% end %>
+  </div>
+</div>

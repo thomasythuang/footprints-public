@@ -63,5 +63,11 @@ Footprints::Application.routes.draw do
   get "apprentices/:id" => "apprentices#edit"
   put "apprentices/:id" => "apprentices#update"
 
-  root :to => "dashboard#index"
+  get 'fighters' => 'fighters#index', as: 'fighters'
+
+  get 'matches' => 'matches#index', as: 'matches'
+
+  post 'challenges' => 'challenges#create', as: 'create_challenge'
+
+  root :to => "fighters#index"
 end

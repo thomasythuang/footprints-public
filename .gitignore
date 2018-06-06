@@ -15,3 +15,6 @@ db/production.sqlite3
 sinatra/
 .rspec-local
 db/*.db3
+*.pem
+*.pub
+*.csv
