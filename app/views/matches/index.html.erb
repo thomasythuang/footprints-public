@@ -1,0 +1,21 @@
+
+<% if @matched_fighters.present? %>
+  <table>
+    <h2>Matched Challenges</h2>
+    <thead>
+      <tr>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @matched_fighters.each do |fighter| %>
+        <tr>
+          <td><%= fighter.email %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <h4>No Matches</h4>
+  <p>You currently have no matches. Check back later or challenge some more fighters!</p>
+<% end %>

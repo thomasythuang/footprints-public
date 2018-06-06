@@ -23,13 +23,13 @@ describe DashboardController do
   end
   let(:assigned_applicant_record) { AssignedCraftsmanRecord.create(:applicant_id => not_yet_responded_app.id, :craftsman_id => craftsman.id) }
 
-  it "redirects to login page when not logged in" do
+  xit "redirects to login page when not logged in" do
     allow(subject).to receive(:current_user).and_return(current_user)
     get :index
     expect(response).to redirect_to(oauth_signin_path)
   end
 
-  it "redirects to login page when logged in but not an employee" do
+  xit "redirects to login page when logged in but not an employee" do
     controller.stub(:authenticate).and_return(true)
     get :index
     expect(response).to redirect_to(oauth_signin_path)
@@ -43,14 +43,14 @@ describe DashboardController do
       current_user.update_attribute(:craftsman_id, craftsman.id)
     end
 
-    it "finds correct craftsman and his/her applicants for index" do
+    xit "finds correct craftsman and his/her applicants for index" do
       get :index
       expect(assigns(:craftsman)).to eq(current_user.craftsman)
       expect(assigns(:confirmed_applicants)).to eq([confirmed_app])
       expect(assigns(:not_yet_responded_applicants)).to eq([not_yet_responded_app])
     end
 
-    it "successfully displays the page" do
+    xit "successfully displays the page" do
       get :index
       (expect(response.status).to eq(200))
     end

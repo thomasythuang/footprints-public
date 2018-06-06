@@ -1,0 +1,10 @@
+
+<% if @fighter %>
+  <h1><%= @fighter.email %></h1>
+
+  <%= button_to 'Pass', create_challenge_path(target_user: @fighter.id, challenged: false) %>
+  <%= button_to 'Challenge', create_challenge_path(target_user: @fighter.id, challenged: true) %>
+<% else %>
+  <h4>No Fighters Available </h4>
+  <p>You have viewed all possible fighters. Check again later</p>
+<% end %>
