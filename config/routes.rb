@@ -65,6 +65,8 @@ Footprints::Application.routes.draw do
 
   get 'fighters' => 'fighters#index', as: 'fighters'
 
+  get 'matches' => 'matches#index', as: 'matches'
+
   post 'challenges' => 'challenges#create', as: 'create_challenge'
 
   root :to => "fighters#index"

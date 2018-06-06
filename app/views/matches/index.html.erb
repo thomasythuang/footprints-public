@@ -4,12 +4,14 @@
     <h2>Matched Challenges</h2>
     <thead>
       <tr>
+        <th>Name</th>
         <th>Email</th>
       </tr>
     </thead>
     <tbody>
       <% @matched_fighters.each do |fighter| %>
         <tr>
+          <td><%= fighter.name %></td>
           <td><%= fighter.email %></td>
         </tr>
       <% end %>
