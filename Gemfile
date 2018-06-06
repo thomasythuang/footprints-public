@@ -20,6 +20,8 @@ gem "httparty", '~> 0.13.0'
 gem "american_date"
 gem 'pg'
 gem 'devise'
+gem 'carrierwave'
+gem 'fog-aws'
 
 gem 'stockroom', git: 'https://github.com/ryanzverner/stockroom-ruby-client.git'
 

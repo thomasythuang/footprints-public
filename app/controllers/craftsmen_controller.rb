@@ -6,6 +6,7 @@ require './lib/craftsmen/skills'
 class CraftsmenController < ApplicationController
   def profile
     @user = current_user
+    @avatar_url = current_user.avatar.url
   end
 
   def seeking
@@ -23,6 +24,6 @@ class CraftsmenController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:description)
+    params.require(:user).permit(:description, :avatar)
   end
 end

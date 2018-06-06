@@ -2,11 +2,13 @@
   <div class="row">
     <div class="column one-third">
       <h1><%= @user.name %></h1>
+      <%= image_tag(@avatar_url) %>
     </div>
     <div class="column two-thirds">
       <%= form_for @user, :url => craftsman_update_path, :method => "PUT" do |f| %>
         <ul class="profile-list">
           <%= f.text_area :description, :value => @user.description, :class => "inline-input" %>
+          <%= f.file_field :avatar %>
           <li>
             <%= f.submit "Save", :class => "button primary" %>
           </li>
