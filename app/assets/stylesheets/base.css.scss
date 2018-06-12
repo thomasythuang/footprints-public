@@ -854,7 +854,8 @@ nav.visible {
 /* forms
 -------------------------------------------------------------- */
 form, .form-column {
-  max-width: 700px;
+  // max-width: 700px;
+  margin-top: 0.5em;
   p {
     margin: 1em 0;
   }
@@ -1635,4 +1636,20 @@ input.required {
 .avatar {
   max-height: 240px;
   width: auto;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.small {
+  font-size: 60%;
+}
+
+.no-margin {
+  margin: 0px;
 }

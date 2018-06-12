@@ -1,0 +1,22 @@
+<div class="container chat-messages">
+  <h2 class="center no-margin">Chat with <%= @fighter.name %></h2>
+  <div class="row">
+    <div class="column one-third">
+      <%= image_tag(@fighter.avatar.url, class: 'avatar') %>
+      <%= link_to 'Back', matches_path, class: 'button secondary' %>
+    </div>
+    <div class="column two-thirds">
+      <% @messages.each do |message| %>
+        <div class="<%= message.sender_id == current_user.id ? 'right' : 'left' %>">
+          <p><%= message.message %></p>
+          <p class="small"><%= message.created_at.strftime("%a %b %e, %l:%M %p") %></p>
+        </div>
+      <% end %>
+
+      <%= form_tag("/chat/#{@fighter.id}") do %>
+        <%= text_field_tag(:message) %>
+        <%= submit_tag('Send', class: 'button primary') %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -67,6 +67,9 @@ Footprints::Application.routes.draw do
 
   get 'matches' => 'matches#index', as: 'matches'
 
+  get 'chat/:fighter_id' => 'chat_messages#show', as: 'chat'
+  post 'chat/:fighter_id' => 'chat_messages#create', as: 'create_chat_message'
+
   post 'challenges' => 'challenges#create', as: 'create_challenge'
 
   root :to => "fighters#index"
