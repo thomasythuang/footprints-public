@@ -13,7 +13,11 @@
         <tbody>
           <% @matched_fighters.each do |fighter| %>
             <tr>
-              <td><%= fighter.name %></td>
+              <td>
+                <%= link_to chat_path(fighter.id) do %>
+                  <%= fighter.name %>
+                <% end %>
+              </td>
               <td><%= fighter.email %></td>
             </tr>
           <% end %>
