@@ -1,7 +1,7 @@
 class ChallengesController < ApplicationController
 
   def create
-    Challenge.create(
+    Challenge.create!(
       user_id:        current_user.id,
       target_user_id: params[:target_user],
       challenged:     params[:challenged]
