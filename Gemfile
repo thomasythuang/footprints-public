@@ -39,6 +39,8 @@ group :test, :development do
   gem "teaspoon-jasmine"
   gem "awesome_print"
   gem "better_errors", '1.1.0'
+  gem "cucumber-rails", require: false
+  gem "database_cleaner"
 end
 
 gem 'simplecov', :require => false, :group => :test
@@ -46,4 +48,3 @@ gem 'simplecov', :require => false, :group => :test
 group :production do
   gem 'unicorn', '~> 4.8.2'
 end
-
