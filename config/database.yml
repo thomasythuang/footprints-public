@@ -16,6 +16,9 @@ development:
   <<: *common
   database: footprints-public_development
 
-test:
+test: &test
   <<: *common
   database: footprints-public_test
+
+cucumber:
+  <<: *test
