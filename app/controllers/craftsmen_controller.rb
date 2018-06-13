@@ -16,9 +16,13 @@ class CraftsmenController < ApplicationController
   end
 
   def update
-    current_user.update!(user_params)
+    begin
+      current_user.update!(user_params)
 
-    redirect_to profile_path, :notice => "Successfully saved profile"
+      redirect_to profile_path, notice: "Successfully saved profile"
+    rescue Excon::Error
+      redirect_to profile_path, flash: { error: ["There was a problem uploading your avatar"] }
+    end
   end
 
   private
