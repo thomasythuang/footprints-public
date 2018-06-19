@@ -285,7 +285,6 @@ module DefaultSeed
         :password => 'password'
       })
 
-      puts "New User LINKED TO #{new_user.craftsman.name} FROM CALLBACK"
 
       new_user = Footprints::Repository.user.create({
         :email => "b.craftsman@gmail.com",

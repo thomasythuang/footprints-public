@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= "Footprints" %></title>
+    <title><%= "8th Fight" %></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="icon" href="/favicon.png">
@@ -15,7 +15,7 @@
   <body>
     <header>
       <div class="container">
-        <h1><a href="/">Footprints</a></h1>
+        <h1><a href="/">8th Fight</a></h1>
         <div class="toggle-nav"></div>
         <%= link_to "Log out", destroy_user_session_path, {:class => "nav-link", :method => :delete} %>
       </div>
@@ -28,28 +28,6 @@
             <a href="/profile">
               <li><span class="nav-icon profile"></span><p>Profile</p></li>
             </a>
-            <a href="/craftsmen/seeking">
-              <li><span class="nav-icon craftsmen"></span><p>Craftsmen</p></li>
-            </a>
-            <a href="/templates">
-              <li><span class="nav-icon templates"></span><p>Templates</p></li>
-            </a>
-
-            <% if current_user && admin? %>
-              <a href="/salaries/edit">
-                <li><span class="nav-icon salaries"></span><p>Salaries</p></li>
-              </a>
-              <a href="/applicants/unassigned">
-                <li><span class="nav-icon new-applicants"></span><p>Unassigned Applicants</p></li>
-              </a>
-              <a href="/reporting">
-                <li><span class="nav-icon reporting"></span><p>Reporting</p></li>
-              </a>
-
-              <a href="/apprentices">
-                <li><span class="nav-icon craftsmen"></span><p>Apprentices</p></li>
-              </a>
-            <% end %>
           </ul>
         </div>
       </nav>

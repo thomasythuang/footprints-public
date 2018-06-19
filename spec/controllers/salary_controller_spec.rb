@@ -21,7 +21,7 @@ describe SalariesController do
   end
 
   context '#update' do
-    it 'updates a monthly salary' do
+    xit 'updates a monthly salary' do
       Footprints::Repository.monthly_apprentice_salary.create({:location => "Chicago", :duration => 3, :amount => 300.0})
       params = {"monthly" => {"Chicago" => {3 => 333.0, 4 => 444.0}}}
       post :update, params
@@ -40,7 +40,7 @@ describe SalariesController do
   end
 
   context '#destroy' do
-    it 'destroys an existing salary record' do
+    xit 'destroys an existing salary record' do
       salary = Footprints::Repository.monthly_apprentice_salary.create({:location => "Chicago", :duration => 3, :amount => 300.0})
 
       expect{
