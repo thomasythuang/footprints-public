@@ -1,0 +1,19 @@
+<div class="container matches">
+  <div class="row">
+    <div class="column two-third">
+      <h2><%= @fighter_1.name %> VS  <%= @fighter_2.name %><h2>
+
+        <%= form_for @match, :url => match_update_path, :method => "PUT" do |f| %>
+          <ul class="profile-list">
+            <li>
+              <%= label_tag(:winner_id, "Winner")%>
+              <%= f.select(:winner_id, options_for_select([[@fighter_1.name, @fighter_1.id], [@fighter_2.name, @fighter_2.id]], @winner_id), include_blank: true) %>
+            </li>
+            <li>
+              <%= f.submit "Submit", :class => "button primary" %>
+            </li>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+</div>

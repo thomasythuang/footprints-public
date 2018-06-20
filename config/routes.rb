@@ -70,6 +70,8 @@ Footprints::Application.routes.draw do
   get 'fighters' => 'fighters#index', as: 'fighters'
 
   get 'matches' => 'matches#index', as: 'matches'
+  get 'matches/:match_id' => 'matches#show', as: 'show_match'
+  put 'matches/:match_id' => 'matches#update', as: 'match_update'
 
   get 'chat/:fighter_id' => 'chat_messages#show', as: 'chat'
   post 'chat/:fighter_id' => 'chat_messages#create', as: 'create_chat_message'

@@ -1,6 +1,6 @@
 <div class="container matches">
   <div class="row">
-  <% if @matched_fighters.present? %>
+  <% if @matches.present? %>
     <div class="column full">
       <table id="matches-table">
         <h2>Matched Challenges</h2>
@@ -11,13 +11,15 @@
           </tr>
         </thead>
         <tbody>
-          <% @matched_fighters.each do |fighter| %>
+          <% @matches.each do |match| %>
             <tr>
               <td>
-                <%= link_to chat_path(fighter.id) do %>
-                  <%= fighter.name %>
+                <%= link_to chat_path(match[:fighter].id) do %>
+                  <%= match[:fighter].name %>
                 <% end %>
               </td>
+              <td><%= match[:fighter].email %></td>
+              <td><%= link_to 'Match', show_match_path(match[:match].id) %></td>
             </tr>
           <% end %>
         </tbody>
