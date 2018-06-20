@@ -341,19 +341,19 @@ describe ApplicantsController do
       repo.monthly_apprentice_salary.destroy_all
     end
 
-    it "renders a modal with the apprenticeship duration options for Chicago" do
+    xit "renders a modal with the apprenticeship duration options for Chicago" do
       get :offer_letter_form, id: first_applicant.id
       expect(assigns(:duration_options)).to eq([4,5])
       expect(response).to render_template("applicants/chicago_offer_letter_form")
     end
 
-    it "renders a modal with the apprenticeship offer letter options for London" do
+    xit "renders a modal with the apprenticeship offer letter options for London" do
       get :offer_letter_form, id: london_applicant.id
       expect(assigns(:duration_options)).to eq([9,10])
       expect(response).to render_template("applicants/london_offer_letter_form")
     end
 
-    it "renders a modal with the apprenticeship offer letter options for Los Angeles" do
+    xit "renders a modal with the apprenticeship offer letter options for Los Angeles" do
       los_angeles_applicant = repo.applicant.create(:name => "New Applicant",
                                                     :applied_on => applied_date,
                                                     :discipline => "developer",
@@ -364,7 +364,7 @@ describe ApplicantsController do
       expect(response).to render_template("applicants/los_angeles_offer_letter_form")
     end
 
-    it "renders a modal with a notice when the applicant is missing a location" do
+    xit "renders a modal with a notice when the applicant is missing a location" do
       homeless_applicant = repo.applicant.create(:name => "Homeless",
                                                 :applied_on => applied_date,
                                                 :discipline => "developer",
@@ -375,7 +375,7 @@ describe ApplicantsController do
       expect(response).to render_template("applicants/unknown_location_offer_letter_form")
     end
 
-    it "sets start_date, end_date (as a Sunday), and offered_on on an applicant" do
+    xit "sets start_date, end_date (as a Sunday), and offered_on on an applicant" do
       post :update_employment_dates, {:id => fifth_applicant.id, :applicant => {:start_date => Date.today + 1.day, :duration => "6", :offered_on => Date.today}}
       applicant = fifth_applicant.reload
       expect(applicant.start_date).to eq(Date.today + 1.day)
@@ -383,13 +383,13 @@ describe ApplicantsController do
       expect(applicant.offered_on).to eq(Date.today)
     end
 
-    it "only allows start_date, end_date, and offered_on to be modified" do
+    xit "only allows start_date, end_date, and offered_on to be modified" do
       post :update_employment_dates, {:id => fifth_applicant.id, :applicant => {:start_date => Date.today + 1.day, :end_date => Date.today + 6.months, :offered_on => Date.today, :name => "Batman"}}
       applicant = fifth_applicant.reload
       expect(applicant.name).to eq("Fifth")
     end
 
-    it "sends a notification email to admin and CFO" do
+    xit "sends a notification email to admin and CFO" do
       allow_any_instance_of(ApplicantOfferLetterGenerator).to receive(:build_offer_letter_as_json) { "some json" }
       allow(NotificationMailer).to receive(:offer_letter_generated).and_call_original
       allow(OfferLetterPost).to receive(:get_pdf) { "pdf" }
@@ -397,7 +397,7 @@ describe ApplicantsController do
       expect(NotificationMailer).to have_received(:offer_letter_generated).with(fifth_applicant)
     end
 
-    it "returns a PDF from Argon" do
+    xit "returns a PDF from Argon" do
       allow_any_instance_of(ApplicantOfferLetterGenerator).to receive(:build_offer_letter_as_json) { "some json" }
       allow(OfferLetterPost).to receive(:get_pdf) { "pdf" }
       get :offer_letter, {:id => fifth_applicant.id, :format => :pdf}
@@ -405,7 +405,7 @@ describe ApplicantsController do
       expect(response.status).to eq(200)
     end
 
-    it "returns an onboarding documents pdf from argon" do
+    xit "returns an onboarding documents pdf from argon" do
       allow(OfferLetterPost).to receive(:get_pdf) { "pdf" }
       get :onboarding_letters, {:id => fifth_applicant.id, :format => :pdf}
       expect(response.content_type).to eq("application/pdf")

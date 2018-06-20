@@ -28,6 +28,7 @@ class Craftsman < ActiveRecord::Base
     Craftsman.create!(:name => "Footprints Steward",
                       :email => ENV["STEWARD"],
                       :employment_id => id)
+
   rescue StandardError => e
     Rails.logger.error("Couldn't create steward with that employment_id. Retrying.")
     self.create_footprints_steward(id + 1) unless id > 1010
