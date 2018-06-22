@@ -45,6 +45,10 @@ GEM
     american_date (1.1.1)
     arel (5.0.1.20140414130214)
     awesome_print (1.8.0)
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     backports (3.11.3)
     bcrypt (3.1.11)
     better_errors (1.1.0)
@@ -72,6 +76,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    connection_pool (2.2.2)
     cucumber (3.1.1)
       builder (>= 2.1.2)
       cucumber-core (~> 3.1.0)
@@ -213,6 +218,12 @@ GEM
     raindrops (0.19.0)
     rake (10.1.1)
     rdoc (6.0.2)
+    react-rails (2.4.4)
+      babel-transpiler (>= 0.7.0)
+      connection_pool
+      execjs
+      railties (>= 3.2)
+      tilt
     ref (2.0.0)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
@@ -305,6 +316,7 @@ DEPENDENCIES
   pry-byebug
   rails (= 4.1.0)
   rake
+  react-rails
   rspec-rails (~> 2.14.1)
   safe_yaml (~> 1.0.1)
   sass-rails (~> 4.0.0)

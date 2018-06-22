@@ -23,6 +23,9 @@
 //= require state_helper
 //= require toggle-nav
 //= require easydropdown
+//= require react
+//= require react_ujs
+//= require components
 //= require_tree
 //= require dashboard
 //= require Chart.min
