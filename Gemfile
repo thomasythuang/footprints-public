@@ -22,6 +22,7 @@ gem 'pg'
 gem 'devise'
 gem 'carrierwave'
 gem 'fog-aws'
+gem 'react-rails'
 
 gem 'stockroom', git: 'https://github.com/ryanzverner/stockroom-ruby-client.git'
 
