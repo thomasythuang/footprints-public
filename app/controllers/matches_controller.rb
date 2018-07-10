@@ -11,14 +11,19 @@ class MatchesController < ApplicationController
     @fighter_2 = @match.fighter_2
 
     @winner_id = @match.winner_id
+    @winner_name = User.find_by_id(@winner_id).try(:name)
   end
 
   def update
     match = Match.find(params[:match_id])
 
-    match.update(match_params)
+    if match.winner_id.blank?
+      match.update(match_params)
 
-    redirect_to show_match_path, notice: "Successfully updated match"
+      redirect_to show_match_path, notice: "Successfully updated match"
+    else
+      redirect_to show_match_path, alert: "Sorry! The match result has already been recorded and cannot be changed. Sucks to suck."
+    end
   end
 
   private

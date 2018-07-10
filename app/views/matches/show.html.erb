@@ -1,8 +1,9 @@
 <div class="container matches">
   <div class="row">
     <div class="column two-third">
-      <h2><%= @fighter_1.name %> VS  <%= @fighter_2.name %><h2>
+      <h2><%= @fighter_1.name %> VS  <%= @fighter_2.name %></h2>
 
+      <% if @winner_id.blank?%>
         <%= form_for @match, :url => match_update_path, :method => "PUT" do |f| %>
           <ul class="profile-list">
             <li>
@@ -14,6 +15,12 @@
             </li>
           </ul>
         <% end %>
-      </div>
+      <% else %>
+        <div class="profile-list">
+          <%= label_tag(:winner_id, "Winner")%>
+          <h3><%= @winner_name %></h3>
+        </div>
+      <% end %>
     </div>
+  </div>
 </div>
