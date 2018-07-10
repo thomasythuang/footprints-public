@@ -36,12 +36,15 @@
     <% if flash[:notice] %>
       <div id="flash-notices">
         <p class="flash notice"><%= flash[:notice].titleize %></p>
-      <% end %>
-      <% if flash[:error] %>
-        <% flash[:error].each do |e| %>
-          <p class="flash warning"><%= e.titleize.gsub('Url', 'URL') + "." %></p>
-        <% end %>
       </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <p class="flash warning"><%= flash[:alert].titleize %></p>
+    <% end %>
+    <% if flash[:error] %>
+      <% flash[:error].each do |e| %>
+        <p class="flash warning"><%= e.titleize.gsub('Url', 'URL') + "." %></p>
+      <% end %>
     <% end %>
 
     <%= yield %>
