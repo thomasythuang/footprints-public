@@ -1,9 +1,10 @@
 CarrierWave.configure do |config|
   config.fog_provider = 'fog/aws'
+
   config.fog_credentials = {
     provider:              'AWS',
-    aws_access_key_id:     'AKIAJ3ZM3NH7T66JYNOA',
-    aws_secret_access_key: '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',
+    aws_access_key_id:     Footprints::Application.config.s3['access_key'],
+    aws_secret_access_key: Footprints::Application.config.s3['secret_access_key'],
     region:                'us-east-2'
   }
   config.fog_directory  = 'footprints-public'
