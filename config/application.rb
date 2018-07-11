@@ -18,6 +18,14 @@ module Footprints
   class Application < Rails::Application
     MAILER_CONFIG = YAML.load_file(Rails.root.join("config", "mailer.yml"))
 
+    begin
+      aws = YAML.load_file(Rails.root.join("config","aws.yml"))
+    rescue Errno::ENOENT
+      aws = YAML.load_file(Rails.root.join("config","aws.yml.example"))
+    end
+
+    config.s3 = aws['s3']
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

@@ -6,6 +6,7 @@ log/
 .bundle/
 .bash_profile
 config/omniauth-vals.txt
+config/aws.yml
 coverage/
 db/footprints_test.db
 db/production.sqlite3
