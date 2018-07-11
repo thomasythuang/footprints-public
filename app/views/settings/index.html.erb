@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <h1>Settings</h1>
+    <%= form_for @live_chat_setting, :url => update_settings_path, :method => "PUT" do |f| %>
+      <p>
+        <%= label_tag(:value, "Live Chat")%>
+        <%= hidden_field_tag(:name, @live_chat_setting.name) %>
+        <%= f.select(:value, options_for_select([true, false], @live_chat_setting.value), {}, class: 'setting-selector') %>
+        <%= f.submit "Submit", :class => "button primary" %>
+      </p>
+    <% end %>
+  </div>
+</div>

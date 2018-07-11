@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
   def admin?
-    current_user.admin?
+    is_thomas_or_andrew?
   end
   helper_method :admin?
 
@@ -40,5 +40,10 @@ class ApplicationController < ActionController::Base
 
   def is_ajax_request
     request.headers["X-Requested-With"] == "XMLHttpRequest"
+  end
+
+  # well named method
+  def is_thomas_or_andrew?
+    current_user.email == 'thomas.huang@yello.co' || current_user.email == 'andrew.kellams@yello.co'
   end
 end

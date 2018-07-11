@@ -7,6 +7,7 @@ class ChatMessagesController < ApplicationController
 
     @messages = messages_in_conversation
     @fighter = ::User.find(params[:fighter_id])
+    @live_chat_enabled = ::Setting.find_by_name('live_chat').value
   end
 
   def create
