@@ -6,6 +6,7 @@ class MatchesController < ApplicationController
 
   def show
     @match = Match.find(params.require(:match_id))
+    redirect_if_current_user_not_involved(@match)
 
     @fighter_1 = @match.fighter_1
     @fighter_2 = @match.fighter_2
@@ -16,6 +17,7 @@ class MatchesController < ApplicationController
 
   def update
     match = Match.find(params[:match_id])
+    redirect_if_current_user_not_involved(match)
 
     if match.winner_id.blank?
       match.update(match_params)
@@ -39,5 +41,11 @@ class MatchesController < ApplicationController
       .includes(:fighter_1, :fighter_2)
       .where('fighter_1_id = ? OR fighter_2_id = ?', current_user.id, current_user.id)
       .map { |match| { match: match, fighter: match.opposing_fighter(current_user.id) } }
+  end
+
+  def redirect_if_current_user_not_involved(current_match)
+    unless [current_match.fighter_1.id, current_match.fighter_2.id].include?(current_user.id)
+      redirect_to root_path
+    end
   end
 end
