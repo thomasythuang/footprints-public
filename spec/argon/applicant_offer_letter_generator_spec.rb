@@ -45,7 +45,7 @@ describe ApplicantOfferLetterGenerator do
     Footprints::Repository.annual_starting_craftsman_salary.destroy_all
   end
 
-  xit "generates a link to Argon with the JSON data and API key" do
+  it "generates a link to Argon with the JSON data and API key" do
     allow(generator).to receive(:get_template).and_return(File.new("#{Rails.root}/spec/argon/mock_offer_letter_template.json"))
 
     expect(generator.build_offer_letter_as_json).to eq('[ "document", {}, [ "paragraph", {}, "Name is G Applicant, residency length is 4 months, start date is 21 June 2014, apprentice salary is £500.00 per month, craftsman salary is £12,345.00 per year, mentor name is A Craftsman, pt/ft is full time, hours per week is 37.5, withdraw offer date is 25 June 2014" ]]')

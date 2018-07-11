@@ -27,7 +27,7 @@ describe SalaryUpdater do
     Footprints::Repository.annual_starting_craftsman_salary.destroy_all
   end
 
-  xit "creates a monthly salary" do
+  it "creates a monthly salary" do
     params = {"location" => "Chicago", "duration" => "15", "amount" => "500.0"}
     updater = SalaryUpdater.new(params)
     updater.create_monthly
@@ -36,7 +36,7 @@ describe SalaryUpdater do
   end
 
 
-  xit "parses the params hash" do
+  it "parses the params hash" do
     params = {"monthly" => {"Chicago" => {"3" => "333.0", "4" => "444.0"}, "London" => {"5" => "555.0", "6" => "666.0"}},
               "annual" => {"Chicago" => "54321.0", "London" => "98765.0"}}
 
@@ -50,7 +50,7 @@ describe SalaryUpdater do
     expect(Footprints::Repository.annual_starting_craftsman_salary.find_by_location("London").amount).to eq(98765.0)
   end
 
-  xit "accepts various non-integer input and sets amounts accordingly" do
+  it "accepts various non-integer input and sets amounts accordingly" do
     params = {"monthly" => {"Chicago" => {"3" => "USD 333", "4" => "$444"}, "London" => {"5" => "5,000", "6" => "666.0"}},
               "annual" => {"Chicago" => "$54,321.00", "London" => "98,765"}}
 
@@ -65,7 +65,7 @@ describe SalaryUpdater do
   end
 
   context '#destroy' do
-    xit 'deletes a salary record' do
+    it 'deletes a salary record' do
       salary = create_salary
       updater = SalaryUpdater.new({"id" => salary.id})
       updater.destroy

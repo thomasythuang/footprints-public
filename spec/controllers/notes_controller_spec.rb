@@ -1,25 +1,25 @@
 require 'spec_helper'
+require 'pry'
 
 describe NotesController do
   let(:repo)      { Footprints::Repository }
   let(:applicant) { repo.applicant.create(:name => "First", :applied_on => Date.current,
                                           :discipline => "developer", :skill => "resident", :location => "Chicago") }
-  let(:craftsman) { double(:craftsman, :id => 1) }
 
   before :each do
     repo.notes.destroy_all
   end
 
   context ":create" do
-    xit "creates note if user has craftsman" do
-      repo.craftsman.create(:name => "A Craftsman", :email => "acraftsman@abcinc.com", :employment_id => "007")
-      user = repo.user.create(:email => "acraftsman@abcinc.com", :password => "Password123!")
+    it "creates note if user has craftsman" do
+      craftsman = repo.craftsman.create(:name => "A Craftsman", :email => "acraftsman@abcinc.com", :employment_id => 7)
+      user = repo.user.create(:email => "acraftsman@abcinc.com", :password => "Password123!", :craftsman_id => craftsman.id)
       controller.stub :current_user => user
       post :create, {"note" => {"body" => "Test Note", "applicant_id" => applicant.id}}
       expect(applicant.notes.last.body).to eq "Test Note"
     end
 
-    xit "redirects back to applicant if note cannot be created" do
+    it "redirects back to applicant if note cannot be created" do
       controller.stub :current_user => double("current_user", :id => 1, :craftsman => nil)
       post :create, {"note" => {"body" => "Test Note", "applicant_id" => applicant.id}}
       expect(flash[:notice]).to eq("Only craftsmen can leave notes.")
@@ -37,8 +37,8 @@ describe NotesController do
 
   context ":update" do
     xit "updates a note" do
-      repo.craftsman.create(:name => "A Craftsman", :email => "acraftsman@abcinc.com", :employment_id => "007")
-      user = repo.user.create(:email => "acraftsman@abcinc.com", :password => 'Password123!')
+      craftsman = repo.craftsman.create(:name => "A Craftsman", :email => "acraftsman@abcinc.com", :employment_id => 7)
+      user = repo.user.create(:email => "acraftsman@abcinc.com", :password => "Password123!", :craftsman_id => craftsman.id)
       controller.stub :current_user => user
       note = repo.notes.create(:body => "Test Note", :applicant_id => applicant.id, :craftsman_id => craftsman.id)
       patch :update, {"id" => note.id, "note" => {"id" => note.id, "body" => "Test Note Edit"}}

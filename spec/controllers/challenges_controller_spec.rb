@@ -23,13 +23,13 @@ describe ChallengesController do
 
   describe 'create' do
     it 'creates a user with given params' do
-      post :create, target_user: challenged_user.id, challenged: true
+      post :create, target_user: challenged_user.id
 
       expect(Challenge.first.attributes)
         .to include(
           'user_id' =>        current_user.id,
           'target_user_id' => challenged_user.id,
-          'challenged' =>     true
+          'challenged' =>     false
         )
     end
 
@@ -45,7 +45,7 @@ describe ChallengesController do
       end
 
       it 'creates a match' do
-        post :create, target_user: challenged_user.id, challenged: true
+        post :create, target_user: challenged_user.id, challenged: 'true'
 
         expect(Match.first.attributes)
           .to include(
