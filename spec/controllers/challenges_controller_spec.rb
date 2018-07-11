@@ -22,8 +22,8 @@ describe ChallengesController do
   end
 
   describe 'create' do
-    it 'creates a user with given params' do
-      post :create, target_user: challenged_user.id
+    it 'creates a challenge with given params' do
+      post :create, target_user: challenged_user.id, challenged: 'false'
 
       expect(Challenge.first.attributes)
         .to include(
@@ -36,6 +36,14 @@ describe ChallengesController do
     context 'when params are not present' do
       it 'raises error' do
         expect { post :create }.to raise_error(ActiveRecord::StatementInvalid)
+      end
+    end
+
+    context 'when there is no reverse challenge present' do
+      it 'doesnt create a match' do
+        post :create, target_user: challenged_user.id, challenged: 'true'
+
+        expect(Match.count).to eq 0
       end
     end
 
@@ -52,6 +60,14 @@ describe ChallengesController do
             'fighter_1_id' => current_user.id,
             'fighter_2_id' => challenged_user.id
           )
+      end
+
+      context 'when passing the challenge' do
+        it 'doesnt create a match' do
+          post :create, target_user: challenged_user.id, challenged: 'false'
+
+          expect(Match.count).to eq 0
+        end
       end
     end
   end
