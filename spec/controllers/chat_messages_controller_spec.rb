@@ -17,9 +17,10 @@ describe ChatMessagesController do
 
   before do
     allow(subject).to receive(:current_user).and_return(current_user)
+    ::Setting.create!(name: 'live_chat', value: true)
   end
 
-  describe 'index' do
+  describe '#show' do
     context 'when fighter in params is not a match' do
       it 'redirects to root' do
         get :show, fighter_id: other_user.id
@@ -42,7 +43,7 @@ describe ChatMessagesController do
                                         recipient_id: current_user.id,
                                         message:      'bonjour')
 
-        get :show, fighter_id: other_user
+        get :show, fighter_id: other_user.id
 
         expect(assigns(:messages)).to eq([message_1, message_2])
       end
@@ -52,10 +53,16 @@ describe ChatMessagesController do
 
         expect(assigns(:fighter)).to eq(other_user)
       end
+
+      it 'assigns live chat setting value to @live_chat_enabled' do
+        get :show, fighter_id: other_user.id
+
+        expect(assigns(:live_chat_enabled)).to eq(true)
+      end
     end
   end
 
-  describe 'create' do
+  describe '#create' do
     it 'creates a chat message with given params and redirects to chat page' do
       message = 'youre a noob'
       post :create, fighter_id: other_user.id, message: message

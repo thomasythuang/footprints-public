@@ -26,10 +26,6 @@ gem 'react-rails'
 
 gem 'stockroom', git: 'https://github.com/ryanzverner/stockroom-ruby-client.git'
 
-group :development do
-  gem 'pry-byebug'
-end
-
 group :doc do
   gem 'sdoc', require: false
 end
@@ -42,6 +38,7 @@ group :test, :development do
   gem "better_errors", '1.1.0'
   gem "cucumber-rails", require: false
   gem "database_cleaner"
+  gem 'pry-byebug'
 end
 
 gem 'simplecov', :require => false, :group => :test

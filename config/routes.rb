@@ -78,6 +78,9 @@ Footprints::Application.routes.draw do
 
   post 'challenges' => 'challenges#create', as: 'create_challenge'
 
+  get 'settings' => 'settings#index', as: 'settings'
+  put 'settings' => 'settings#update', as: 'update_settings'
+
   root :to => "fighters#index"
 
   namespace :api do
