@@ -4,7 +4,7 @@ require 'ar_repository/models/monthly_apprentice_salary'
 describe MonthlyApprenticeSalary do
   let(:repo) { Footprints::Repository.monthly_apprentice_salary }
 
-  xit "only allows a duration once per location" do
+  it "only allows a duration once per location" do
     chicago_3_month = repo.create(:duration => 3,
                                   :location => 'Chicago',
                                   :amount => 500.00)

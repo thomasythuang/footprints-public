@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   include ActiveModel::Validations
 
   mount_uploader :avatar, AvatarUploader
-  
+
   belongs_to :craftsman
 
   # validate :password_complexity AMAZING method that's unfortunately not currently needed

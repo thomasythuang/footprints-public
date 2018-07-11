@@ -50,7 +50,7 @@ describe Warehouse::CraftsmenSync do
     expect(craftsman_holly.reload.archived).to be_true
   end
 
-  xit "associates footprints craftsman to their footprints user" do
+  it "associates footprints craftsman to their footprints user" do
     repo.user.create(:email => "tflenderson@dundermifflin.com", :password => 'Password123!', :uid => "007")
     allow(api).to receive(:current_craftsmen) { [toby] }
     craftsmen_sync.sync
