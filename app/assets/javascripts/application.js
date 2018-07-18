@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require autocomplete
 //= require craftsmen
+//= require chat_messages
 //= require datepicker
 //= require applicants
 //= require flash
