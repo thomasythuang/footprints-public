@@ -7,7 +7,19 @@
     </div>
     <div class="column two-thirds">
       <% if @live_chat_enabled %>
-        <h1>Live Chat</h1>
+        <div class="chat-message-container">
+          <% @messages.each do |message| %>
+            <div class="chat-message <%= message.sender_id == current_user.id ? 'right' : 'left' %>">
+              <p><%= message.message %></p>
+              <p class="small"><%= message.created_at.strftime("%a %b %e, %l:%M %p") %></p>
+            </div>
+          <% end %>
+        </div>
+
+        <%= form_tag("/chat/#{@fighter.id}") do %>
+          <%= text_field_tag(:message) %>
+          <%= submit_tag('Send', class: 'button primary chat-message-submit') %>
+        <% end %>
       <% else %>
         <% @messages.each do |message| %>
           <div class="<%= message.sender_id == current_user.id ? 'right' : 'left' %>">
